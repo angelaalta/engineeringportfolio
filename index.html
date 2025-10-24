@@ -31,8 +31,14 @@
   <!-- HERO SECTION -->
   <section class="landing">
     <div class="landing-wrap">
-      <!-- Left: big hero background (image set in CSS as hero.jpg) -->
-      <div class="hero-bg">
+      <!-- Left: big hero box becomes slideshow -->
+      <div class="hero-bg" id="heroSlideshow">
+        <div class="slides">
+          <img src="hero1.jpg" alt="Workshop prototype" class="active" />
+          <img src="hero2.jpg" alt="Assembly and test bench" />
+          <img src="hero3.jpg" alt="CAD and machined parts" />
+        </div>
+
         <div class="hero-overlay">
           <h1 class="hero-title">Angela Altamirano</h1>
           <p class="hero-subtitle">Mechanical Design Engineer&nbsp;|&nbsp;Biomedical Devices&nbsp;|&nbsp;Prototyping &amp; Testing</p>
@@ -44,11 +50,11 @@
         <img class="avatar" src="angela-photo.jpg" alt="Portrait of Angela Altamirano" />
         <div class="contact-block">
           <a class="contact-link" href="mailto:aca92@cornell.edu">aca92@cornell.edu</a>
-          <a class="contact-link" href="https://www.linkedin.com/in/angela-altamirano/" target="_blank">LinkedIn</a>
           <div class="contact-link muted">(916) 372-2761</div>
-
+          <a class="contact-link" href="https://www.linkedin.com/in/angela-altamirano/" target="_blank" rel="noopener">
+            linkedin.com/in/angela-altamirano
+          </a>
         </div>
-
 
         <a class="resume-big" href="/resume.pdf" download>Download My Resume</a>
       </aside>
@@ -101,6 +107,19 @@
         mobileNav.classList.contains('open') ? closeMenu() : openMenu();
       });
       window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+    }
+
+    // Simple crossfade slideshow (changes every 4s)
+    const slides = document.querySelectorAll('#heroSlideshow .slides img');
+    let i = 0;
+    function nextSlide() {
+      slides[i].classList.remove('active');
+      i = (i + 1) % slides.length;
+      slides[i].classList.add('active');
+    }
+    if (slides.length) {
+      slides[0].classList.add('active');
+      setInterval(nextSlide, 4000);
     }
   </script>
 </body>
