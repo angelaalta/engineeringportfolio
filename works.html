@@ -1,99 +1,103 @@
-<section class="works-header">
-  <h1>Works</h1>
-  <p class="muted">Selected engineering projects. Click a row for photos + details.</p>
-</section>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Works | Angela Altamirano</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page" role="main">
+    <header class="site-header">
+      <div class="brand">
+        <div class="brand-name">Angela Altamirano</div>
+        <div class="brand-sub">Cornell University • B.S. Biomedical Engineering • M.Eng. Mechanical Engineering</div>
+      </div>
 
-<section class="works-list-rows">
-  <!-- Row 1 -->
-  <a class="work-row" href="javascript:void(0)"
-     data-title="SteadyStride — Self-stabilizing cane"
-     data-meta="2025 · Lead designer · Prototyping, user tests"
-     data-desc="Mechanical stabilization mechanism to reduce fall risk in Parkinson’s patients. Built multiple iterations and ran formative testing."
-     data-img="steadystride-1.jpg,steadystride-2.jpg">
-    <img class="thumb" src="steadystride-1.jpg" alt="SteadyStride prototype" />
-    <div class="work-row__left">
-      <h3>SteadyStride — Self-stabilizing cane</h3>
-      <p class="muted">Passive stabilization; built & tested prototypes.</p>
-    </div>
-    <div class="work-row__right">
-      <span class="meta">2025</span>
-      <span class="arrow" aria-hidden="true">→</span>
-    </div>
-  </a>
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="works.html" class="active">Works</a>
+        <a href="index.html#resume" class="resume">Resume</a>
+      </nav>
 
-  <!-- Row 2 -->
-  <a class="work-row" href="javascript:void(0)"
-     data-title="Flexible Stapler Fastener"
-     data-meta="2024 · Concept & proto · Materials, DFMA"
-     data-desc="Stapler-like fastener as a sewing alternative. Explored elastomer + thin-sheet combos, snap retention, and durability."
-     data-img="stapler-1.jpg,stapler-2.jpg">
-    <img class="thumb" src="stapler-1.jpg" alt="Flexible stapler fastener" />
-    <div class="work-row__left">
-      <h3>Flexible Stapler Fastener</h3>
-      <p class="muted">Concepting, materials, manufacturability.</p>
-    </div>
-    <div class="work-row__right">
-      <span class="meta">2024</span>
-      <span class="arrow" aria-hidden="true">→</span>
-    </div>
-  </a>
+      <button class="menu-btn" aria-controls="mobile-nav" aria-expanded="false" id="menuBtn">☰</button>
+    </header>
 
-  <!-- Row 3 -->
-  <a class="work-row" href="javascript:void(0)"
-     data-title="Lung Fluid Monitoring Prototype"
-     data-meta="2025 · Mechanical lead · Mechanisms"
-     data-desc="Translation→rotation with flexures vs miter gears. Benchtop rigs; sensitivity evaluation."
-     data-img="lung-1.jpg,lung-2.jpg">
-    <img class="thumb" src="lung-1.jpg" alt="Lung fluid monitoring prototype" />
-    <div class="work-row__left">
-      <h3>Lung Fluid Monitoring Prototype</h3>
-      <p class="muted">Mechanism design, flexure studies.</p>
-    </div>
-    <div class="work-row__right">
-      <span class="meta">2025</span>
-      <span class="arrow" aria-hidden="true">→</span>
-    </div>
-  </a>
-</section>
+    <main>
+      <section class="works-header">
+        <h1>Works</h1>
+        <p class="muted">Selected engineering projects. Each row opens a dedicated page.</p>
+      </section>
 
-<!-- Lightweight modal (adds on top of your page) -->
-<div class="lightbox" id="lightbox" aria-hidden="true">
-  <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-labelledby="lbTitle">
-    <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
-    <h2 id="lbTitle"></h2>
-    <div class="lb-meta muted" id="lbMeta"></div>
-    <p id="lbDesc"></p>
-    <div class="lb-images" id="lbImages"></div>
+      <section class="works-list-rows">
+        <!-- Row 1 -->
+        <div class="work-row">
+          <img class="thumb" src="steadystride-1.jpg" alt="SteadyStride cane prototype" loading="lazy" />
+          <div class="work-row__left">
+            <h3>SteadyStride — Self-stabilizing cane</h3>
+            <p class="muted">Passive stabilization mechanism to reduce fall risk in Parkinson’s patients.</p>
+            <div class="meta small">2025 • Lead designer • Prototyping, user tests</div>
+          </div>
+          <div class="work-row__right">
+            <a class="learn-btn" href="steadystride.html" aria-label="Learn more about SteadyStride project">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="work-row">
+          <img class="thumb" src="stapler-1.jpg" alt="Flexible stapler fastener prototype" loading="lazy" />
+          <div class="work-row__left">
+            <h3>Flexible Stapler Fastener</h3>
+            <p class="muted">Stapler-like fastener as an alternative to sewing buttons; materials & DFMA.</p>
+            <div class="meta small">2024 • Concept & prototype</div>
+          </div>
+          <div class="work-row__right">
+            <a class="learn-btn" href="stapler.html" aria-label="Learn more about Flexible Stapler Fastener project">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="work-row">
+          <img class="thumb" src="lung-1.jpg" alt="Lung fluid monitoring mechanism prototype" loading="lazy" />
+          <div class="work-row__left">
+            <h3>Lung Fluid Monitoring Prototype</h3>
+            <p class="muted">Translation → rotation via flexures; benchtop rigs & sensitivity evaluation.</p>
+            <div class="meta small">2025 • Mechanical lead • Mechanisms</div>
+          </div>
+          <div class="work-row__right">
+            <a class="learn-btn" href="lung.html" aria-label="Learn more about Lung Fluid Monitoring project">Learn More</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>© Angela Altamirano — Built with HTML &amp; CSS</div>
+    </footer>
   </div>
-</div>
 
-<script>
-  // Open gallery when a row is clicked
-  const lb = document.getElementById('lightbox');
-  const lbClose = document.getElementById('lbClose');
-  const lbTitle = document.getElementById('lbTitle');
-  const lbMeta  = document.getElementById('lbMeta');
-  const lbDesc  = document.getElementById('lbDesc');
-  const lbImages = document.getElementById('lbImages');
+  <!-- Mobile nav -->
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <div class="box" role="dialog" aria-modal="true">
+      <a href="index.html" onclick="closeMenu()">Home</a>
+      <a href="about.html" onclick="closeMenu()">About</a>
+      <a href="works.html" onclick="closeMenu()">Works</a>
+      <a href="index.html#resume" onclick="closeMenu()">Resume</a>
+      <button class="close-btn" onclick="closeMenu()">Close</button>
+    </div>
+  </div>
 
-  document.querySelectorAll('.work-row').forEach(row => {
-    row.addEventListener('click', () => {
-      lbTitle.textContent = row.dataset.title || '';
-      lbMeta.textContent  = row.dataset.meta  || '';
-      lbDesc.textContent  = row.dataset.desc  || '';
-      lbImages.innerHTML  = '';
-      (row.dataset.img || '').split(',').map(s=>s.trim()).filter(Boolean).forEach(src => {
-        const img = new Image();
-        img.src = src; img.alt = lbTitle.textContent;
-        lbImages.appendChild(img);
-      });
-      lb.classList.add('open');
-      lb.setAttribute('aria-hidden','false');
-    });
-  });
-
-  function closeLb(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); }
-  lbClose.addEventListener('click', closeLb);
-  lb.addEventListener('click', e => { if(e.target === lb) closeLb(); });
-  window.addEventListener('keydown', e => { if(e.key === 'Escape') closeLb(); });
-</script>
+  <script>
+    // mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    function openMenu(){ mobileNav.classList.add('open'); mobileNav.setAttribute('aria-hidden','false'); menuBtn.setAttribute('aria-expanded','true'); }
+    function closeMenu(){ mobileNav.classList.remove('open'); mobileNav.setAttribute('aria-hidden','true'); menuBtn.setAttribute('aria-expanded','false'); }
+    if(menuBtn){
+      menuBtn.addEventListener('click', () => mobileNav.classList.contains('open') ? closeMenu() : openMenu());
+      window.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+    }
+  </script>
+</body>
+</html>

@@ -14,7 +14,7 @@
     <header class="site-header">
       <div class="brand">
         <div class="brand-name">Angela Altamirano</div>
-        <div class="brand-sub"> Cornell University • B.S. Biomedical Engineering • M.Eng. Mechanical Engineering</div>
+        <div class="brand-sub">Cornell University • B.S. Biomedical Engineering • M.Eng. Mechanical Engineering</div>
       </div>
 
       <nav class="primary-nav" aria-label="Primary navigation">
@@ -31,7 +31,7 @@
   <!-- HERO SECTION -->
   <section class="landing">
     <div class="landing-wrap">
-      <!-- Left: big hero background -->
+      <!-- Left: big hero background (image set in CSS as hero.jpg) -->
       <div class="hero-bg">
         <div class="hero-overlay">
           <h1 class="hero-title">Angela Altamirano</h1>
@@ -60,7 +60,7 @@
     </div>
   </section>
 
-  <!-- Footer content -->
+  <!-- CONTENT + FOOTER -->
   <div class="page">
     <main>
       <section id="resume" class="resume-block">
@@ -81,4 +81,32 @@
       <a href="index.html" onclick="closeMenu()">Home</a>
       <a href="about.html" onclick="closeMenu()">About</a>
       <a href="works.html" onclick="closeMenu()">Works</a>
+      <a href="#resume" onclick="closeMenu()">Resume</a>
+      <button class="close-btn" onclick="closeMenu()">Close</button>
+    </div>
+  </div>
 
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+
+    function openMenu(){
+      mobileNav.classList.add('open');
+      mobileNav.setAttribute('aria-hidden','false');
+      menuBtn.setAttribute('aria-expanded','true');
+    }
+    function closeMenu(){
+      mobileNav.classList.remove('open');
+      mobileNav.setAttribute('aria-hidden','true');
+      menuBtn.setAttribute('aria-expanded','false');
+    }
+    if(menuBtn){
+      menuBtn.addEventListener('click', () => {
+        mobileNav.classList.contains('open') ? closeMenu() : openMenu();
+      });
+      window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+    }
+  </script>
+</body>
+</html>
