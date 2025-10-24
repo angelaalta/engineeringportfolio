@@ -467,3 +467,43 @@ body.about {
   .home .landing-wrap { grid-template-columns: 1fr; }
   .home .avatar { width: 180px; height: 180px; }
 }
+
+/* Thumbnails inside minimal rows */
+.work-row{
+  grid-template-columns: 120px 1fr auto; /* add a thumbnail column */
+}
+.work-row .thumb{
+  width: 120px; height: 80px; object-fit: cover; border-radius: 8px;
+}
+
+/* Keep text tidy next to the image */
+.work-row__left h3{ margin: 0 0 6px 0; font-size: 18px; }
+.work-row__left p{ margin: 0; color: var(--muted); font-size: 14px; }
+.work-row__right{ display:flex; align-items:center; gap:10px; white-space:nowrap; }
+.work-row:hover .arrow{ transform: translateX(4px); }
+
+/* Mobile: stack nicely */
+@media (max-width: 720px){
+  .work-row{ grid-template-columns: 80px 1fr; }
+  .work-row .thumb{ width:80px; height:60px; }
+  .work-row__right{ grid-column: 1 / -1; justify-content: space-between; margin-top: 6px; }
+}
+
+/* Simple lightbox (same style as earlier minimal) */
+.lightbox{
+  position: fixed; inset: 0; background: rgba(11,18,30,0.65);
+  display:none; z-index: 100;
+}
+.lightbox.open{ display:grid; place-items:center; padding:20px; }
+.lightbox-dialog{
+  background:#fff; color:#0b1220; max-width:900px; width:100%;
+  border-radius:14px; padding:18px; position:relative;
+  box-shadow:0 18px 40px rgba(0,0,0,0.35);
+}
+.lb-close{
+  position:absolute; top:10px; right:10px; background:#f1f5f9; border:0;
+  border-radius:8px; width:36px; height:36px; cursor:pointer; font-size:16px;
+}
+.lb-images{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px; }
+.lb-images img{ width:100%; border-radius:10px; object-fit:cover; }
+@media (max-width: 720px){ .lb-images{ grid-template-columns:1fr; } }
