@@ -17,9 +17,9 @@ html, body {
 }
 
 .page {
-  max-width: var(--max-width);
-  margin: 48px auto;
-  padding: 28px;
+  max-width: 1200px;   /* wider content area */
+  margin: 24px auto;   /* smaller top/bottom margins */
+  padding: 20px 40px;  /* thinner side padding */
 }
 
 /* ============ Header & Nav ============ */
