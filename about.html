@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me | Angela Altamirano</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page" role="main">
+    <header class="site-header">
+      <div class="brand">
+        <div class="brand-name">Angela Altamirano</div>
+        <div class="brand-sub">Biomedical MEng • Device Design</div>
+      </div>
+
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="index.html#works">Works</a>
+        <a href="about.html" class="active">About</a>
+        <a href="index.html#resume" class="resume">Resume</a>
+      </nav>
+
+      <button class="menu-btn" aria-controls="mobile-nav" aria-expanded="false" id="menuBtn">☰</button>
+    </header>
+
+    <!-- Mobile nav -->
+    <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+      <div class="box" role="dialog" aria-modal="true">
+        <a href="index.html" onclick="closeMenu()">Home</a>
+        <a href="index.html#works" onclick="closeMenu()">Works</a>
+        <a href="about.html" onclick="closeMenu()">About</a>
+        <a href="index.html#resume" onclick="closeMenu()">Resume</a>
+        <button class="close-btn" onclick="closeMenu()">Close</button>
+      </div>
+    </div>
+
+    <main>
+      <section class="about-container">
+        <div class="about-image">
+          <img src="angela-photo.jpg" alt="Angela Altamirano" />
+        </div>
+
+        <div class="about-text">
+          <h1>About Me</h1>
+          <p>
+            My name is Angela Altamirano and I am from Sacramento, California.
+            I am a junior at Cornell University studying Biomedical Engineering
+            with a concentration in Biomechanics and Mechanobiology.
+          </p>
+
+          <p>
+            I am interested in biomedical engineering with the hope of creating
+            a biomedical device that will allow for innovative healthcare
+            options that are more accessible and affordable. Post-grad, I hope
+            to work in R&D of medical devices to work towards making this a
+            reality.
+          </p>
+
+          <p>
+            If I had to describe myself, I would say I am a storykeeper, not a
+            storyteller. One reason why I chose to pursue BME is because of the
+            people it serves. I love listening to the stories of others,
+            especially about their experiences within the medical field and the
+            ways it is not only good but can grow.
+          </p>
+
+          <p>
+            Outside of engineering, I enjoy learning my family's native
+            languages: Tagalog and Spanish. Hopefully, in the future, I will be
+            able to visit the Philippines and Mexico and communicate more
+            effectively.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>© Angela Altamirano — Built with HTML &amp; CSS</div>
+    </footer>
+  </div>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    function openMenu(){ mobileNav.classList.add('open'); mobileNav.setAttribute('aria-hidden','false'); menuBtn.setAttribute('aria-expanded','true'); }
+    function closeMenu(){ mobileNav.classList.remove('open'); mobileNav.setAttribute('aria-hidden','true'); menuBtn.setAttribute('aria-expanded','false'); }
+    if(menuBtn){
+      menuBtn.addEventListener('click', () => {
+        mobileNav.classList.contains('open') ? closeMenu() : openMenu();
+      });
+      window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+    }
+  </script>
+</body>
+</html>

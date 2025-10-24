@@ -5,76 +5,34 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Angela Altamirano — Mechanical & Biomedical Engineer</title>
   <meta name="description" content="Angela Altamirano — device design, prototyping, testing" />
-  <style>
-    /* Minimal, type-driven layout inspired by the example site */
-    :root{
-      --bg:#ffffff;
-      --text:#0b1220;
-      --muted:#6b7280;
-      --accent:#0b84ff;
-      --max-width:900px;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    }
-    html,body{height:100%;margin:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;}
-    .page{max-width:var(--max-width);margin:48px auto;padding:28px;}
-    header{display:flex;align-items:center;justify-content:space-between;gap:12px;}
-    .brand{font-weight:700;letter-spacing:0.2px}
-    nav{display:flex;align-items:center;gap:18px}
-    nav a{color:var(--muted);text-decoration:none;font-weight:600;font-size:14px}
-    nav a.resume{border:1px solid #e6eef8;padding:8px 12px;border-radius:8px;color:var(--text)}
-    /* Mobile menu */
-    .menu-btn{display:none;border:0;background:transparent;font-size:18px}
-    /* hero */
-    .hero{display:grid;grid-template-columns:1fr 220px;gap:28px;margin-top:36px;align-items:center}
-    h1{margin:0;font-size:30px;line-height:1.05}
-    p.lead{margin:14px 0;color:var(--muted);max-width:60ch}
-    .portrait{width:220px;height:220px;border-radius:10px;background:#f3f7fb;display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700}
-    /* sections */
-    section{margin-top:42px}
-    .works-list{display:flex;flex-direction:column;gap:18px}
-    .work{padding:16px;border-radius:10px;border:1px solid #f1f5f9}
-    .work h3{margin:0 0 6px;font-size:16px}
-    .work p{margin:0;color:var(--muted);font-size:14px}
-    footer{margin-top:48px;color:var(--muted);font-size:13px}
-    /* responsive */
-    @media (max-width:820px){
-      .hero{grid-template-columns:1fr;gap:20px}
-      nav{display:none}
-      .menu-btn{display:block}
-    }
-    /* simple focus outlines for accessibility */
-    a:focus, button:focus{outline:3px solid rgba(11,132,255,0.12);outline-offset:3px}
-    /* modal mobile nav */
-    .mobile-nav{position:fixed;inset:0;background:rgba(11,18,30,0.85);display:none;align-items:center;justify-content:center;z-index:50}
-    .mobile-nav.open{display:flex}
-    .mobile-nav .box{background:white;padding:28px;border-radius:12px;min-width:260px;text-align:center}
-    .mobile-nav a{display:block;margin:12px 0;color:var(--text);text-decoration:none;font-weight:700}
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="page" role="main">
-    <header>
+    <header class="site-header">
       <div class="brand">
-        <div style="font-size:18px">Angela Altamirano</div>
-        <div style="font-size:12px;color:var(--muted)">Biomedical MEng • Device Design</div>
+        <div class="brand-name">Angela Altamirano</div>
+        <div class="brand-sub">Biomedical MEng • Device Design</div>
       </div>
 
-      <nav aria-label="Primary navigation">
-        <a href="#about">About</a>
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <a href="index.html" class="active">Home</a>
         <a href="#works">Works</a>
+        <a href="about.html">About</a>
         <a href="#resume" class="resume">Resume</a>
       </nav>
 
       <button class="menu-btn" aria-controls="mobile-nav" aria-expanded="false" id="menuBtn">☰</button>
     </header>
 
-    <!-- Mobile nav modal -->
+    <!-- Mobile nav -->
     <div class="mobile-nav" id="mobileNav" aria-hidden="true">
       <div class="box" role="dialog" aria-modal="true">
-        <a href="#about" onclick="closeMenu()">About</a>
+        <a href="index.html" onclick="closeMenu()">Home</a>
         <a href="#works" onclick="closeMenu()">Works</a>
+        <a href="about.html" onclick="closeMenu()">About</a>
         <a href="#resume" onclick="closeMenu()">Resume</a>
-        <button style="margin-top:12px;padding:8px 12px;border-radius:8px;border:1px solid #ddd" onclick="closeMenu()">Close</button>
+        <button class="close-btn" onclick="closeMenu()">Close</button>
       </div>
     </div>
 
@@ -82,33 +40,26 @@
       <section class="hero" id="about">
         <div>
           <h1>Hi — I’m Angela. I design mechanical medical devices and prototypes.</h1>
-          <p class="lead">I focus on mechanical design, rapid prototyping, and validation testing. Recent projects include a self-stabilizing cane, a flexible fastener alternative to buttons, and a device for lung fluid monitoring. I enjoy moving concepts from sketch → CAD → prototype → test.</p>
-          <p style="margin-top:16px">
-            <a href="#works" style="text-decoration:none;padding:10px 14px;border-radius:8px;background:var(--text);color:white;font-weight:700">Works</a>
-            <a href="mailto:youremail@example.com" style="margin-left:10px;color:var(--muted);text-decoration:none;font-weight:700">Email</a>
+          <p class="lead">I focus on mechanical design, rapid prototyping, and validation testing. Recent projects include a self-stabilizing cane, a flexible fastener alternative to buttons, and a device for lung fluid monitoring.</p>
+          <p class="cta-row">
+            <a href="#works" class="btn">Works</a>
+            <a href="mailto:youremail@example.com" class="link">Email</a>
           </p>
         </div>
-
-        <aside class="portrait" aria-hidden="true">
-          <!-- Replace with your photo -->
-          Upload portrait
-        </aside>
+        <aside class="portrait" aria-hidden="true">Upload portrait</aside>
       </section>
 
-      <section id="works">
-        <h2 style="margin:0 0 16px 0;font-size:18px">Selected Works</h2>
-
+      <section id="works" class="works">
+        <h2>Selected Works</h2>
         <div class="works-list">
           <article class="work">
             <h3>SteadyStride — Self-stabilizing cane</h3>
             <p class="muted">Lead designer. Mechanical stabilization system to reduce fall risk in Parkinson’s patients. Built functional prototypes and ran user testing.</p>
           </article>
-
           <article class="work">
             <h3>Flexible Stapler Fastener</h3>
             <p class="muted">Concept and prototyping for a non-sewn clothing fastener — focused on manufacturability and material testing.</p>
           </article>
-
           <article class="work">
             <h3>Lung Fluid Monitoring Prototype</h3>
             <p class="muted">Mechanical lead: designed a translation-to-rotation mechanism, evaluated flexure solutions vs miter gears, and produced manufacturable prototypes.</p>
@@ -116,40 +67,31 @@
         </div>
       </section>
 
-      <section id="resume" style="margin-top:28px">
-        <h2 style="margin:0 0 8px 0;font-size:16px">Resume</h2>
-        <p class="muted" style="margin:0 0 12px 0">Download a PDF or view experience highlights.</p>
+      <section id="resume" class="resume-block">
+        <h2>Resume</h2>
+        <p class="muted">Download a PDF or view experience highlights.</p>
         <p>
-          <a href="/resume.pdf" style="text-decoration:none;padding:10px 14px;border-radius:8px;border:1px solid #e6eef8">Download résumé</a>
+          <a href="/resume.pdf" class="btn outline">Download résumé</a>
         </p>
       </section>
-
     </main>
 
-    <footer>
-      <div style="margin-top:32px;color:var(--muted)">© Angela Altamirano — Built with HTML &amp; CSS</div>
+    <footer class="site-footer">
+      <div>© Angela Altamirano — Built with HTML &amp; CSS</div>
     </footer>
   </div>
 
   <script>
-    // small JS for mobile menu toggling
     const menuBtn = document.getElementById('menuBtn');
     const mobileNav = document.getElementById('mobileNav');
-    function openMenu(){
-      mobileNav.classList.add('open');
-      mobileNav.setAttribute('aria-hidden','false');
-      menuBtn.setAttribute('aria-expanded','true');
+    function openMenu(){ mobileNav.classList.add('open'); mobileNav.setAttribute('aria-hidden','false'); menuBtn.setAttribute('aria-expanded','true'); }
+    function closeMenu(){ mobileNav.classList.remove('open'); mobileNav.setAttribute('aria-hidden','true'); menuBtn.setAttribute('aria-expanded','false'); }
+    if(menuBtn){
+      menuBtn.addEventListener('click', () => {
+        mobileNav.classList.contains('open') ? closeMenu() : openMenu();
+      });
+      window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
     }
-    function closeMenu(){
-      mobileNav.classList.remove('open');
-      mobileNav.setAttribute('aria-hidden','true');
-      menuBtn.setAttribute('aria-expanded','false');
-    }
-    menuBtn.addEventListener('click', () => {
-      if (mobileNav.classList.contains('open')) closeMenu(); else openMenu();
-    });
-    // close on escape
-    window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
   </script>
 </body>
 </html>
