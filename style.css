@@ -196,9 +196,9 @@ body.about { background: #f7f6f4; }
 
 /* Full blue section */
 .home .landing {
-  background: #996260; /* Deep blue background */
+  background: #674148; /* Deep blue background */
   color: #fff;
-  min-height: 100vh;
+  min-height: 83vh;
   margin: 0;
   padding: 0;
 }
@@ -206,7 +206,7 @@ body.about { background: #f7f6f4; }
 /* Layout of the two boxes */
 .home .landing-wrap {
   width: 100%;
-  height: 100%;
+  height: 90%;
   max-width: 1400px;
   margin: 0 auto;
   padding: 28px;
@@ -223,7 +223,7 @@ body.about { background: #f7f6f4; }
   height: 100%;
   border-radius: 14px;
   overflow: hidden;
-  background: #674148;
+  background: #996260;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
@@ -272,7 +272,7 @@ body.about { background: #f7f6f4; }
 
 /* RIGHT BOX: sidebar */
 .home .sidebar {
-  background: #1E4AAE; /* slightly different blue tone */
+  background: #996260; /* slightly different blue tone */
   color: #eef3f7;
   border-radius: 14px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.35);
@@ -281,15 +281,15 @@ body.about { background: #f7f6f4; }
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 100%;
-  gap: 16px;
+  height: 90%;
+  gap: 12px;
 }
 
 .home .avatar {
   width: 220px; height: 220px;
   object-fit: cover;
   border-radius: 50%;
-  border: 6px solid #1E4AAE;
+  border: 6px solid #674148;
   outline: 1px solid rgba(255,255,255,0.35);
 }
 
