@@ -168,12 +168,17 @@ body.about { background: #f7f6f4; }
   min-height: 60vh; margin-top: 12px;
   background: rgba(255, 255, 255, 0.85);
 }
-.about-image { flex: 1; min-width: 300px; }
+.about-image { flex: 1; min-width: 300px; margin-top: 40px;}
 .about-image img { width: 90%; height: 90%; object-fit: cover; }
 .about-text {
-  flex: 1; padding: 60px; backdrop-filter: blur(6px);
-  display: flex; flex-direction: column; justify-content: center;
+  flex: 1;
+  padding: 35px 60px 60px 60px; /* less padding on top */
+  backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* aligns text toward top */
 }
+
 .about-text h1 { font-size: 2.2rem; margin: 0 0 1rem 0; }
 .about-text p { line-height: 1.6; margin: 0 0 1rem 0; color: var(--text); }
 
