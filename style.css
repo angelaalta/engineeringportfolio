@@ -34,7 +34,7 @@ html, body {
 .brand-name {
   font-weight: 700;
   letter-spacing: 0.2px;
-  font-size: 18px;
+  font-size: 28px;
 }
 
 .brand-sub {
@@ -193,8 +193,8 @@ body.about { background: #f7f6f4; }
 
 /* Band behind both boxes (sage) */
 .home .landing {
-  background: #D8E3D1;        /* soft sage */
-  color: #2E3A2E;
+  background: #C8D8C0;        /* darker sage green */
+  color: #2A352A;
 }
 
 /* Layout of the two boxes */
