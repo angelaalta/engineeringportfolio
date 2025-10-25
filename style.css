@@ -214,7 +214,7 @@ body.about { background: #f7f6f4; }
   grid-template-columns: 1.6fr 0.8fr;
   gap: 28px;
   align-items: stretch;
-  min-height: 100vh; /* makes both columns full height */
+  min-height: 75vh; /* makes both columns full height */
 }
 
 /* LEFT BOX: slideshow or image */
