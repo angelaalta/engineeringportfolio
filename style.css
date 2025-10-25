@@ -335,3 +335,25 @@ body.about { background: #f7f6f4; }
   .home .landing-wrap { grid-template-columns: 1fr; }
   .home .avatar { width: 180px; height: 180px; }
 }
+/* ============ About Page: Photo Collage ============ */
+.photo-collage {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.photo-collage img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-collage img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
