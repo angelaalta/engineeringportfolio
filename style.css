@@ -129,7 +129,10 @@ h1 { margin: 0; font-size: 30px; line-height: 1.05; }
 }
 
 /* ============ Works (minimal rows) ============ */
-.works-header h1 { margin: 0 0 8px 0; font-size: 28px; }
+.works-header h1 {
+  margin: 40px 0 8px 0;  /* ⬅ adds 40px of space above */
+  font-size: 28px;
+}
 .works-list-rows {
   display: flex;
   flex-direction: column;
