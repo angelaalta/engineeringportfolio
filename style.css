@@ -196,7 +196,7 @@ body.about { background: #f7f6f4; }
 
 /* Full blue section */
 .home .landing {
-  background: #0E3C90; /* Deep blue background */
+  background: #996260; /* Deep blue background */
   color: #fff;
   min-height: 100vh;
   margin: 0;
@@ -223,7 +223,7 @@ body.about { background: #f7f6f4; }
   height: 100%;
   border-radius: 14px;
   overflow: hidden;
-  background: #1C3A80;
+  background: #674148;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
