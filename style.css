@@ -130,7 +130,7 @@ h1 { margin: 0; font-size: 30px; line-height: 1.05; }
 
 /* ============ Works (minimal rows) ============ */
 .works-header h1 {
-  margin: 40px 0 8px 0;  /* ⬅ adds 40px of space above */
+  margin: 60px 0 8px 0;  /* ⬅ adds 60px of space above */
   font-size: 28px;
 }
 .works-list-rows {
@@ -196,7 +196,7 @@ body.about { background: #f7f6f4; }
 
 /* Band behind both boxes (sage) */
 .home .landing {
-  background: #C8D8C0;        /* darker sage green */
+  background: #172a0d;        /* darker sage green */
   color: #2A352A;
 }
 
