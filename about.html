@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Me | Angela Altamirano</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div class="page" role="main">
     <header class="site-header">
@@ -13,12 +15,12 @@
         <div class="brand-name">Angela Altamirano</div>
         <div class="brand-sub"> Cornell University • B.S. Biomedical Engineering • M.Eng. Mechanical Engineering</div>
       </div>
-<nav class="primary-nav" aria-label="Primary navigation">
-    <a href="index.html">Home</a>
-    <a href="about.html" class="active">About</a>
-    <a href="works.html">Works</a>
-    <a href="index.html#resume" class="resume">Resume</a>
-</nav>
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="works.html">Works</a>
+        <a href="resume.html">Resume</a>
+      </nav>
 
 
       <button class="menu-btn" aria-controls="mobile-nav" aria-expanded="false" id="menuBtn">☰</button>
@@ -65,43 +67,43 @@
             ways it is not only good but can grow.
           </p>
 
-        <p>
+          <p>
             Outside of engineering, I enjoy learning my family's native
             languages: Tagalog and Spanish. Hopefully, in the future, I will be
             able to visit the Philippines and Mexico and communicate more
             effectively.
-        </p>
+          </p>
         </div>
-        
-        </section>
-        
-        </main>
-        <div class="photo-collage">
-          <div class="photo-item">
-            <img src="endalz.jpeg" alt="Walk to End Alzheimer's Disease">
-            <span class="caption">Walk to End Alzheimer's Disease</span>
-          </div>
-          <div class="photo-item">
-            <img src="veda.jpeg" alt="Cornell DEBUT Team Photos">
-            <span class="caption">Cornell DEBUT Team Photos</span>
-          </div>
-          <div class="photo-item">
-            <img src="skate.jpg" alt="New York Prebyterian Immersion Program Team Bonding">
-            <span class="caption">New York Prebyterian Immersion Program Team Bonding</span>
-          </div>
-          <div class="photo-item">
-            <img src="sunset.JPEG" alt="Cornell Senior Sunrise">
-            <span class="caption">Cornell Senior Sunrise</span>
-          </div>
-          <div class="photo-item">
-            <img src="fam.jpg" alt="Bachelors of Science Graduation">
-            <span class="caption">Bachelors of Science Graduation</span>
-          </div>
-          <div class="photo-item">
-            <img src="rad.JPEG" alt="Radiation Lab Clinical Shadowing">
-            <span class="caption">Radiation Lab Clinical Shadowing</span>
-          </div>
-        </div>
+
+      </section>
+
+    </main>
+    <div class="photo-collage">
+      <div class="photo-item">
+        <img src="endalz.jpeg" alt="Walk to End Alzheimer's Disease">
+        <span class="caption">Walk to End Alzheimer's Disease</span>
+      </div>
+      <div class="photo-item">
+        <img src="veda.jpeg" alt="Cornell DEBUT Team Photos">
+        <span class="caption">Cornell DEBUT Team Photos</span>
+      </div>
+      <div class="photo-item">
+        <img src="skate.jpg" alt="New York Prebyterian Immersion Program Team Bonding">
+        <span class="caption">New York Prebyterian Immersion Program Team Bonding</span>
+      </div>
+      <div class="photo-item">
+        <img src="sunset.JPEG" alt="Cornell Senior Sunrise">
+        <span class="caption">Cornell Senior Sunrise</span>
+      </div>
+      <div class="photo-item">
+        <img src="fam.jpg" alt="Bachelors of Science Graduation">
+        <span class="caption">Bachelors of Science Graduation</span>
+      </div>
+      <div class="photo-item">
+        <img src="rad.JPEG" alt="Radiation Lab Clinical Shadowing">
+        <span class="caption">Radiation Lab Clinical Shadowing</span>
+      </div>
+    </div>
 
 
     <footer class="site-footer">
@@ -112,14 +114,12 @@
   <script>
     const menuBtn = document.getElementById('menuBtn');
     const mobileNav = document.getElementById('mobileNav');
-    function openMenu(){ mobileNav.classList.add('open'); mobileNav.setAttribute('aria-hidden','false'); menuBtn.setAttribute('aria-expanded','true'); }
-    function closeMenu(){ mobileNav.classList.remove('open'); mobileNav.setAttribute('aria-hidden','true'); menuBtn.setAttribute('aria-expanded','false'); }
-    if(menuBtn){
+    function openMenu() { mobileNav.classList.add('open'); mobileNav.setAttribute('aria-hidden', 'false'); menuBtn.setAttribute('aria-expanded', 'true'); }
+    function closeMenu() { mobileNav.classList.remove('open'); mobileNav.setAttribute('aria-hidden', 'true'); menuBtn.setAttribute('aria-expanded', 'false'); }
+    if (menuBtn) {
       menuBtn.addEventListener('click', () => {
         mobileNav.classList.contains('open') ? closeMenu() : openMenu();
       });
       window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
     }
   </script>
-
-

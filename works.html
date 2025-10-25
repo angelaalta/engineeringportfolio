@@ -1,11 +1,13 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Works | Angela Altamirano</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div class="page" role="main">
     <header class="site-header">
@@ -15,11 +17,12 @@
       </div>
 
       <nav class="primary-nav" aria-label="Primary navigation">
-        <a href="index.html">Home</a>
+        <a href="index.html" class="active">Home</a>
         <a href="about.html">About</a>
-        <a href="works.html" class="active">Works</a>
-        <a href="index.html#resume" class="resume">Resume</a>
+        <a href="works.html">Works</a>
+        <a href="resume.html">Resume</a>
       </nav>
+
 
       <button class="menu-btn" aria-controls="mobile-nav" aria-expanded="false" id="menuBtn">☰</button>
     </header>
@@ -40,7 +43,8 @@
             <div class="meta small">2025 • Lead designer • Prototyping, user tests</div>
           </div>
           <div class="work-row__right">
-            <a class="learn-btn" href="steadystride.html" aria-label="Learn more about SteadyStride project">Learn More</a>
+            <a class="learn-btn" href="steadystride.html" aria-label="Learn more about SteadyStride project">Learn
+              More</a>
           </div>
         </div>
 
@@ -53,7 +57,8 @@
             <div class="meta small">2024 • Concept & prototype</div>
           </div>
           <div class="work-row__right">
-            <a class="learn-btn" href="stapler.html" aria-label="Learn more about Flexible Stapler Fastener project">Learn More</a>
+            <a class="learn-btn" href="stapler.html"
+              aria-label="Learn more about Flexible Stapler Fastener project">Learn More</a>
           </div>
         </div>
 
@@ -66,7 +71,8 @@
             <div class="meta small">2025 • Mechanical lead • Mechanisms</div>
           </div>
           <div class="work-row__right">
-            <a class="learn-btn" href="lung.html" aria-label="Learn more about Lung Fluid Monitoring project">Learn More</a>
+            <a class="learn-btn" href="lung.html" aria-label="Learn more about Lung Fluid Monitoring project">Learn
+              More</a>
           </div>
         </div>
       </section>
@@ -92,12 +98,13 @@
     // mobile menu
     const menuBtn = document.getElementById('menuBtn');
     const mobileNav = document.getElementById('mobileNav');
-    function openMenu(){ mobileNav.classList.add('open'); mobileNav.setAttribute('aria-hidden','false'); menuBtn.setAttribute('aria-expanded','true'); }
-    function closeMenu(){ mobileNav.classList.remove('open'); mobileNav.setAttribute('aria-hidden','true'); menuBtn.setAttribute('aria-expanded','false'); }
-    if(menuBtn){
+    function openMenu() { mobileNav.classList.add('open'); mobileNav.setAttribute('aria-hidden', 'false'); menuBtn.setAttribute('aria-expanded', 'true'); }
+    function closeMenu() { mobileNav.classList.remove('open'); mobileNav.setAttribute('aria-hidden', 'true'); menuBtn.setAttribute('aria-expanded', 'false'); }
+    if (menuBtn) {
       menuBtn.addEventListener('click', () => mobileNav.classList.contains('open') ? closeMenu() : openMenu());
       window.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
     }
   </script>
 </body>
+
 </html>

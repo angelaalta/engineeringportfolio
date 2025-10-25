@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -16,12 +17,11 @@
         <div class="brand-name">Angela Altamirano</div>
         <div class="brand-sub">Cornell University • B.S. Biomedical Engineering • M.Eng. Mechanical Engineering</div>
       </div>
-
       <nav class="primary-nav" aria-label="Primary navigation">
         <a href="index.html" class="active">Home</a>
         <a href="about.html">About</a>
         <a href="works.html">Works</a>
-        <a href="#resume" class="resume">Resume</a>
+        <a href="resume.html">Resume</a>
       </nav>
 
       <button class="menu-btn" aria-controls="mobile-nav" aria-expanded="false" id="menuBtn">☰</button>
@@ -41,7 +41,8 @@
 
         <div class="hero-overlay">
           <h1 class="hero-title">Angela Altamirano</h1>
-          <p class="hero-subtitle">Mechanical Design Engineering&nbsp;|&nbsp;Iterative Prototyping&nbsp;|&nbsp;Testing</p>
+          <p class="hero-subtitle">Mechanical Design Engineering&nbsp;|&nbsp;Iterative Prototyping&nbsp;|&nbsp;Testing
+          </p>
         </div>
       </div>
 
@@ -80,7 +81,7 @@
       <a href="index.html" onclick="closeMenu()">Home</a>
       <a href="about.html" onclick="closeMenu()">About</a>
       <a href="works.html" onclick="closeMenu()">Works</a>
-      <a href="#resume" onclick="closeMenu()">Resume</a>
+      <a href="resume.html" onclick="closeMenu()">Resume</a>
       <button class="close-btn" onclick="closeMenu()">Close</button>
     </div>
   </div>
@@ -90,17 +91,17 @@
     const menuBtn = document.getElementById('menuBtn');
     const mobileNav = document.getElementById('mobileNav');
 
-    function openMenu(){
+    function openMenu() {
       mobileNav.classList.add('open');
-      mobileNav.setAttribute('aria-hidden','false');
-      menuBtn.setAttribute('aria-expanded','true');
+      mobileNav.setAttribute('aria-hidden', 'false');
+      menuBtn.setAttribute('aria-expanded', 'true');
     }
-    function closeMenu(){
+    function closeMenu() {
       mobileNav.classList.remove('open');
-      mobileNav.setAttribute('aria-hidden','true');
-      menuBtn.setAttribute('aria-expanded','false');
+      mobileNav.setAttribute('aria-hidden', 'true');
+      menuBtn.setAttribute('aria-expanded', 'false');
     }
-    if(menuBtn){
+    if (menuBtn) {
       menuBtn.addEventListener('click', () => {
         mobileNav.classList.contains('open') ? closeMenu() : openMenu();
       });
@@ -121,4 +122,5 @@
     }
   </script>
 </body>
+
 </html>
