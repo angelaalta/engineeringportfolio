@@ -262,7 +262,7 @@ body.about { background: #f7f6f4; }
 
 /* RIGHT BOX: sidebar (keep current dark or tweak later) */
 .home .sidebar {
-  background: #3a8226;      /* keep as-is; change to #C9D8C5 for sage */
+  background: hsl(107, 49%, 51%);      /* keep as-is; change to #C9D8C5 for sage */
   color: #eef3f7;
   border-radius: 14px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.35);
