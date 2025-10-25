@@ -196,9 +196,13 @@ body.about { background: #f7f6f4; }
 
 /* Band behind both boxes (sage) */
 .home .landing {
-  background: #0c3280;        /* darker sage green */
+  background: #0c3280; /* your blue color */
   color: #2054bc;
+  min-height: 100vh; /* makes it take up the full screen height */
+  margin: 0; /* removes spacing between sections */
+  padding: 0; /* removes padding that adds white gaps */
 }
+
 
 /* Layout of the two boxes */
 .home .landing-wrap {
