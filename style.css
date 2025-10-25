@@ -338,7 +338,7 @@ body.about { background: #f7f6f4; }
 /* ============ About Page: Photo Collage ============ */
 .photo-collage {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, 1fr); /* 3 photos per row */
   gap: 16px;
   margin-top: 40px;
   padding: 20px;
@@ -346,7 +346,7 @@ body.about { background: #f7f6f4; }
 
 .photo-collage img {
   width: 100%;
-  height: 220px;
+  height: 220px;            /* consistent card height */
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -356,4 +356,80 @@ body.about { background: #f7f6f4; }
 .photo-collage img:hover {
   transform: scale(1.03);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .photo-collage {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .photo-collage {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============ About Page: Photo Collage ============ */
+.photo-collage {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 per row */
+  gap: 16px;
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.photo-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.photo-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Caption styling */
+.photo-item .caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 10px;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.05s ease-out;
+  border-radius: 0 0 10px 10px;
+}
+
+.photo-item:hover .caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .photo-collage {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .photo-collage {
+    grid-template-columns: 1fr;
+  }
 }
