@@ -197,7 +197,7 @@ body.about { background: #f7f6f4; }
 /* Band behind both boxes (sage) */
 .home .landing {
   background: #2054bc;        /* darker sage green */
-  color: #2A352A;
+  color: #2054bc;
 }
 
 /* Layout of the two boxes */
