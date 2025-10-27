@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SteadyStride — Self-Stabilizing Cane | Angela Altamirano</title>
+  <meta name="description" content="SteadyStride is a tremor-resistant, self-stabilizing cane designed to improve safety for people with Parkinson’s." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- TOP BAR -->
+  <div class="page" role="banner">
+    <header class="site-header">
+      <div class="brand">
+        <div class="brand-name">Angela Altamirano</div>
+        <div class="brand-sub">Cornell University • B.S. Biomedical Engineering • M.Eng. Mechanical Engineering</div>
+      </div>
+
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="works.html" class="active">Works</a>
+        <a href="resume.html" class="resume">Resume</a>
+      </nav>
+
+      <button class="menu-btn" aria-controls="mobile-nav" aria-expanded="false" id="menuBtn">☰</button>
+    </header>
+  </div>
+
+  <!-- HERO -->
+  <section class="case-hero">
+    <div class="case-hero__media">
+      <!-- Replace image(s) with your own -->
+      <img src="steadystride-hero.jpg" alt="SteadyStride prototype in use" />
+    </div>
+    <div class="case-hero__text">
+      <h1>SteadyStride — Self-Stabilizing Cane</h1>
+      <p class="case-tagline">Tremor-resistant cane mechanism to reduce stumbles and improve confidence during ambulation.</p>
+      <div class="case-meta">
+        <span>Role: Mechanical Lead</span>
+        <span>Timeline: 2024–2025</span>
+        <span>Skills: Mechanisms, prototyping, user testing</span>
+      </div>
+      <a class="btn outline" href="works.html">← Back to Works</a>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <main class="page" role="main">
+    <!-- Quick Summary cards -->
+    <section class="spec-cards">
+      <article>
+        <h3>Problem</h3>
+        <p>Hand tremor and uneven ground can destabilize a traditional cane, increasing effort and fall risk.</p>
+      </article>
+      <article>
+        <h3>Outcome</h3>
+        <p>A passive self-stabilizing head that filters high-frequency inputs and auto-levels the tip.</p>
+      </article>
+      <article>
+        <h3>Impact</h3>
+        <p>Prototype demonstrated smoother tip contact and improved perceived stability in pilot tests (n=6).</p>
+      </article>
+    </section>
+
+    <!-- Two-column narrative -->
+    <section class="case-grid">
+      <div>
+        <h2>Overview</h2>
+        <p>SteadyStride is a cane add-on that passively stabilizes the tip using a compact mechanism. The design
+          reduces transmission of high-frequency tremor and helps the tip maintain normal contact with the floor.</p>
+
+        <h2>My Role</h2>
+        <ul>
+          <li>Concept generation, mechanism trade studies (flexures vs. bearings vs. compliant linkages)</li>
+          <li>CAD, DFM, and rapid prototyping (SLA/FFF prints, machined parts)</li>
+          <li>Bench testing (step/impulse response) & early hallway/user sessions</li>
+        </ul>
+
+        <h2>Design Requirements</h2>
+        <ul>
+          <li>Passive (no batteries), compact, retrofittable to standard cane shafts</li>
+          <li>Attenuate 6–12 Hz hand tremor without feeling “mushy” during stance</li>
+          <li>Durable in outdoor conditions; tip must remain grippy and replaceable</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Approach</h2>
+        <p>We explored two architectures: a viscously-damped gimbal and a compliant-pivot with tuned stiffness.
+           Early benchtop rigs quantified tip displacement vs. input frequency. Final alpha used a low-profile
+           gimbal with viscoelastic pads providing phase lead and energy dissipation.</p>
+
+        <h2>Testing</h2>
+        <ul>
+          <li>Bench: sinusoidal input 2–15 Hz, tip travel &lt; 40% baseline at 8–10 Hz</li>
+          <li>Pilot walks (n=6): perceived smoothness ↑; planting accuracy ↑; learning time &lt; 5 min</li>
+          <li>Durability: 5,000 plant cycles with no loosening; pads replaceable</li>
+        </ul>
+
+        <h2>Status</h2>
+        <p>Alpha prototype complete; next steps include extended trials, pad material optimization, and
+           tool-less service features.</p>
+      </div>
+    </section>
+
+    <!-- Image gallery -->
+    <section class="gallery">
+      <figure>
+        <img src="steadystride-assembly.jpg" alt="Exploded view of the mechanism" />
+        <figcaption>Exploded view of the stabilizing head (rev B).</figcaption>
+      </figure>
+      <figure>
+        <img src="steadystride-bench.jpg" alt="Benchtop test rig" />
+        <figcaption>Benchtop rig for frequency response characterization.</figcaption>
+      </figure>
+      <figure>
+        <img src="steadystride-inuse.jpg" alt="User walking test" />
+        <figcaption>Hallway user test evaluating tip tracking and planting.</figcaption>
+      </figure>
+    </section>
+
+    <!-- Specs / materials -->
+    <section class="spec-table">
+      <h2>Build Specs</h2>
+      <ul>
+        <li>Mass: ~280 g add-on</li>
+        <li>Envelope: 62 mm Ø × 45 mm height</li>
+        <li>Materials: PA12, TPU (pads), 6061-T6, stainless fasteners</li>
+        <li>Processes: SLA/FFF print, CNC, laser-cut elastomer</li>
+      </ul>
+      <p><a class="link" href="SteadyStride_OnePager.pdf" target="_blank" rel="noopener">One-pager (PDF)</a></p>
+    </section>
+
+    <footer class="site-footer">
+      <div>© Angela Altamirano — Built with HTML &amp; CSS</div>
+    </footer>
+  </main>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <div class="box" role="dialog" aria-modal="true">
+      <a href="index.html" onclick="closeMenu()">Home</a>
+      <a href="about.html" onclick="closeMenu()">About</a>
+      <a href="works.html" onclick="closeMenu()">Works</a>
+      <a href="index.html#resume" onclick="closeMenu()">Resume</a>
+      <button

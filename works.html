@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -8,7 +7,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
+<body class="works-large">
   <div class="page" role="main">
     <header class="site-header">
       <div class="brand">
@@ -21,60 +20,53 @@
         <a href="works.html" class="active">Works</a>
         <a href="resume.html">Resume</a>
       </nav>
-
-
       <button class="menu-btn" aria-controls="mobile-nav" aria-expanded="false" id="menuBtn">☰</button>
     </header>
 
     <main>
       <section class="works-header">
         <h1>Works</h1>
-        <p class="muted">Selected engineering projects. Each row opens a dedicated page.</p>
+        <p class="muted">Selected engineering projects. Each card opens a dedicated page.</p>
       </section>
 
-      <section class="works-list-rows">
-        <!-- Row 1 -->
-        <div class="work-row">
-          <img class="thumb" src="steadystride-1.jpg" alt="SteadyStride cane prototype" loading="lazy" />
-          <div class="work-row__left">
-            <h3>SteadyStride: A Self-Stabilizing Cane for Parkinson's Disease</h3>
-            <p class="muted">Passive stabilization mechanism to reduce fall risk in Parkinson’s patients.</p>
-            <div class="meta small">2025 • Lead designer • Prototyping, user tests</div>
-          </div>
-          <div class="work-row__right">
-            <a class="learn-btn" href="steadystride.html" aria-label="Learn more about SteadyStride project">Learn
-              More</a>
-          </div>
+      <!-- Feature 1 -->
+      <article class="work-feature">
+        <div class="work-feature__text">
+          <h2><em>SteadyStride:</em> A Self-Stabilizing Cane for Parkinson's Disease</h2>
+          <p class="work-feature__sub">Medtronic/BMES Student Design Competition 1st Place</p>
+          <p class="work-feature__meta">DEBUT Project Team, Cornell University</p>
+          <a href="steadystride.html" class="btn big">Learn more</a>
         </div>
+        <div class="work-feature__media">
+          <img src="steady.JPEG" alt="SteadyStride team at BMES/Medtronic design competition" loading="lazy" />
+        </div>
+      </article>
 
-        <!-- Row 2 -->
-        <div class="work-row">
-          <img class="thumb" src="stapler-1.jpg" alt="Flexible stapler fastener prototype" loading="lazy" />
-          <div class="work-row__left">
-            <h3>Senior Caspstone: EasiStitch, Automated Suturing Device</h3>
-            <p class="muted">Stapler-like fastener as an alternative to sewing buttons; materials & DFMA.</p>
-            <div class="meta small">2024 • Concept & prototype</div>
-          </div>
-          <div class="work-row__right">
-            <a class="learn-btn" href="stapler.html"
-              aria-label="Learn more about Flexible Stapler Fastener project">Learn More</a>
-          </div>
+      <!-- Feature 3 (image on the left by using .invert) -->
+      <article class="work-feature invert">
+        <div class="work-feature__text">
+          <h2><em>EasiStitch:</em> Automated Suturing Device</h2>
+          <p class="work-feature__sub">Senior Capstone Project</p>
+          <p class="work-feature__meta">Advisor: James Antaki, Cornell University</p>
+          <a href="stapler.html" class="btn big">Learn more</a>
         </div>
+        <div class="work-feature__media">
+          <img src="stapler-1.jpg" alt="EasiStitch automated suturing prototype" loading="lazy" />
+        </div>
+      </article>
 
-        <!-- Row 3 -->
-        <div class="work-row">
-          <img class="thumb" src="lung-1.jpg" alt="Lung fluid monitoring mechanism prototype" loading="lazy" />
-          <div class="work-row__left">
-            <h3>Lung Fluid Monitoring Prototype</h3>
-            <p class="muted">Translation → rotation via flexures; benchtop rigs & sensitivity evaluation.</p>
-            <div class="meta small">2025 • Mechanical lead • Mechanisms</div>
-          </div>
-          <div class="work-row__right">
-            <a class="learn-btn" href="lung.html" aria-label="Learn more about Lung Fluid Monitoring project">Learn
-              More</a>
-          </div>
+      <!-- Feature 2 -->
+      <article class="work-feature">
+        <div class="work-feature__text">
+          <h2>Lung Fluid Monitoring Prototype</h2>
+          <p class="work-feature__sub"><em>2025</em></p>
+          <p class="work-feature__meta">Translation→rotation via flexures • Benchtop rigs & sensitivity</p>
+          <a href="lung.html" class="btn big">Learn more</a>
         </div>
-      </section>
+        <div class="work-feature__media">
+          <img src="lung-1.jpg" alt="Lung fluid monitoring mechanism prototype" loading="lazy" />
+        </div>
+      </article>
     </main>
 
     <footer class="site-footer">
@@ -105,5 +97,4 @@
     }
   </script>
 </body>
-
 </html>
