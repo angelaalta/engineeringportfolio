@@ -176,7 +176,7 @@ h1 {
 }
 
 .work-feature__text {
-  background: rgb(247, 232, 247);
+  background: rgb(251, 241, 251);
   border-radius: 12px;
   padding: 32px 28px;
   display: flex;
@@ -526,4 +526,37 @@ body.about {
     order: 1;
     min-height: 240px;
   }
+}
+
+/* ============ Resume Page ============ */
+.resume-container h1 {
+  font-size: 25px;        /* smaller font size */
+  font-weight: 650;       /* slightly bold */
+  margin-top: 40px;       /* space below your name */
+  margin-bottom: 20px;    /* a bit of breathing room before buttons */
+  color: var(--text);
+}
+/* ============ Resume Page Buttons ============ */
+.resume-container .btn {
+  background: #674148;        /* your pink shade */
+  color: #fff;                /* white text */
+  border: none;
+  font-weight: 700;
+  transition: background 0.2s ease;
+}
+
+.resume-container .btn:hover {
+  background: #674148;        /* slightly darker pink on hover */
+}
+
+/* Outline button version */
+.resume-container .btn.outline {
+  background: transparent;
+  border: 2px solid #674148;
+  color: #674148;
+}
+
+.resume-container .btn.outline:hover {
+  background: #674148;
+  color: #fff;
 }
