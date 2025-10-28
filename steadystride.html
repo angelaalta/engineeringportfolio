@@ -1,148 +1,224 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SteadyStride — Self-Stabilizing Cane | Angela Altamirano</title>
-  <meta name="description" content="SteadyStride is a tremor-resistant, self-stabilizing cane designed to improve safety for people with Parkinson’s." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SteadyStride | Angela Altamirano</title>
   <link rel="stylesheet" href="style.css" />
-</head>
+  <style>
+    /* Page-local styles so we don't disturb the rest of the site */
+    :root { --ink: var(--text); --mutedInk: var(--muted); --edge: #e5e7eb; }
 
+    .proj-hero {
+      background: #674148; /* matches your brand burgundy */
+      color: #fff;
+      margin-top: 45px; /* adds breathing room below the header */
+      border-radius: 14px;
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+    }
+    .proj-hero h1 { margin: 0 0 8px 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(28px, 5vw, 54px); line-height: 1.02; }
+    .proj-hero .sub { margin: 6px 0 0; font-size: clamp(14px,1.8vw,18px); color: rgba(255,255,255,.9); }
+    .proj-hero .meta { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 10px; }
+    .proj-badge { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.35); padding: 8px 12px; border-radius: 999px; font-weight: 700; font-size: 12px; letter-spacing:.02em; }
+    .proj-hero-media { border-radius: 12px; overflow: hidden; background:#996260; min-height: 260px; position: relative; }
+    .proj-hero-media img, .proj-hero-media video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+
+    .proj-layout { display:grid; grid-template-columns: minmax(220px, 280px) 1fr; gap: 28px; margin-top: 26px; }
+
+    .proj-card { background: #fff; border: 1px solid var(--edge); border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); padding: 20px; }
+    .proj-card h2 { margin: 0 0 10px; font-size: 20px; }
+    .proj-card p { margin: 0 0 10px; line-height: 1.6; }
+
+    .proj-toc { position: sticky; top: 16px; align-self: start; }
+    .proj-toc a { display:block; text-decoration:none; color: var(--mutedInk); padding: 8px 10px; border-radius: 8px; font-weight:700; }
+    .proj-toc a:hover { color: var(--ink); background: #f7f7f9; }
+
+    .proj-section { background:#fff; border:1px solid var(--edge); border-radius:12px; padding: 22px; margin-bottom: 24px; box-shadow: 0 8px 20px rgba(0,0,0,.06); }
+    .proj-section h3 { margin: 0 0 10px; font-size: 18px; }
+
+    .proj-specs { display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+    .proj-spec { border:1px dashed var(--edge); border-radius:10px; padding:12px; }
+    .proj-spec .k { color: var(--mutedInk); font-size: 12px; text-transform: uppercase; letter-spacing:.04em; }
+    .proj-spec .v { font-weight: 700; margin-top: 4px; }
+
+    .proj-grid { display:grid; grid-template-columns: 0.9fr 1.1fr; gap: 14px; align-items: stretch; }
+    .proj-media { border-radius:
+    .proj-media img, .proj-media video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+
+    .proj-cta { text-align:center; margin: 22px 0 0; }
+    .btn.pink { background:#d77a8f; color:#fff; border:none; }
+    .btn.pink:hover { filter: brightness(0.95); }
+    .btn.pink.outline { background:transparent; color:#d77a8f; border:2px solid #d77a8f; }
+    .btn.pink.outline:hover { background:#d77a8f; color:#fff; }
+
+    .proj-note { color: var(--mutedInk); font-size: 13px; }
+
+    @media (max-width: 980px) {
+      .proj-hero { grid-template-columns: 1fr; }
+      .proj-layout { grid-template-columns: 1fr; }
+      .proj-grid, .proj-specs { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
 <body>
-  <!-- TOP BAR -->
-  <div class="page" role="banner">
+  <div class="page" role="main">
+    <!-- Header copied from your site for consistency -->
     <header class="site-header">
       <div class="brand">
         <div class="brand-name">Angela Altamirano</div>
-        <div class="brand-sub">Cornell University • B.S. Biomedical Engineering • M.Eng. Mechanical Engineering</div>
+        <div class="brand-sub"> Cornell University • B.S. Biomedical Engineering • M.Eng. Mechanical Engineering</div>
       </div>
-
       <nav class="primary-nav" aria-label="Primary navigation">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="works.html" class="active">Works</a>
-        <a href="resume.html" class="resume">Resume</a>
+        <a href="resume.html">Resume</a>
       </nav>
-
       <button class="menu-btn" aria-controls="mobile-nav" aria-expanded="false" id="menuBtn">☰</button>
     </header>
-  </div>
 
-  <!-- HERO -->
-  <section class="case-hero">
-    <div class="case-hero__media">
-      <!-- Replace image(s) with your own -->
-      <img src="steadystride-hero.jpg" alt="SteadyStride prototype in use" />
+    <!-- Mobile nav -->
+    <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+      <div class="box" role="dialog" aria-modal="true">
+        <a href="index.html" onclick="closeMenu()">Home</a>
+        <a href="works.html" onclick="closeMenu()">Works</a>
+        <a href="about.html" onclick="closeMenu()">About</a>
+        <a href="resume.html" onclick="closeMenu()">Resume</a>
+        <button class="close-btn" onclick="closeMenu()">Close</button>
+      </div>
     </div>
-    <div class="case-hero__text">
-      <h1>SteadyStride — Self-Stabilizing Cane</h1>
-      <p class="case-tagline">Tremor-resistant cane mechanism to reduce stumbles and improve confidence during ambulation.</p>
-      <div class="case-meta">
-        <span>Role: Mechanical Lead</span>
-        <span>Timeline: 2024–2025</span>
-        <span>Skills: Mechanisms, prototyping, user testing</span>
+
+    <!-- Hero -->
+    <section class="proj-hero">
+      <div>
+        <h1>SteadyStride — Self‑Stabilizing Cane for Parkinson’s Disease</h1>
+        <p class="sub">A mechanically self-centering cane to reduce freezing of gait and improve stability during ambulation.</p>
+        <div class="meta">
+          <span class="proj-badge">Role: Project Manager</span>
+          <span class="proj-badge">Award: 1st Place — Medtronic/BMES Design Competition</span>
+          <span class="proj-badge">DATES HERE</span>
+        </div>
       </div>
-      <a class="btn outline" href="works.html">← Back to Works</a>
+      <div class="proj-hero-media">
+        <!-- Replace with your image or a short looped demo -->
+        <img src="steadystride-hero.jpg" alt="SteadyStride cane hero image" />
+      </div>
+    </section>
+
+    <!-- Body layout -->
+    <div class="proj-layout">
+      <!-- Left column: TOC and Specs -->
+      <aside class="proj-card proj-toc">
+        <h2 style="margin-bottom:8px;">On this page</h2>
+        <nav>
+          <a href="#summary">Summary</a>
+          <a href="#problem">Problem & Approach</a>
+          <a href="#mechanism">Mechanism</a>
+          <a href="#testing">Testing & Results</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#downloads">Downloads</a>
+        </nav>
+        <hr style="border:none; border-top:1px solid var(--edge); margin:14px 0;"/>
+        <div class="proj-specs">
+          <div class="proj-spec"><div class="k">Team</div><div class="v">EasiStitch/SteadyStride</div></div>
+          <div class="proj-spec"><div class="k">Timeline</div><div class="v">2023–2025</div></div>
+          <div class="proj-spec"><div class="k">My Scope</div><div class="v">Concept → CAD → Prototype → Test</div></div>
+          <div class="proj-spec"><div class="k">Tools</div><div class="v">SolidWorks, Instron, MATLAB</div></div>
+        </div>
+      </aside>
+
+      <!-- Right column: Content sections -->
+      <div>
+        <section id="summary" class="proj-section">
+          <h3>Summary</h3>
+          <p>SteadyStride is a mechanical cane that gently self-centers during stance and provides dynamic stabilization during swing. The goal is to reduce freezing of gait episodes and improve confidence while walking without adding electronics or weight.</p>
+        </section>
+
+        <section id="problem" class="proj-section">
+          <h3>Problem &amp; Approach</h3>
+          <div class="proj-grid">
+            <div>
+              <p>Freezing of gait (FoG) and postural instability affect daily mobility for people with Parkinson’s Disease. Many canes are passive and do not assist with trajectory recovery when perturbed. We explored passive mechanical solutions that add restoring moments only when needed.</p>
+              <ul>
+                <li>Need-finding with clinicians and patient interviews</li>
+                <li>Design criteria: low mass, no batteries, simple manufacturability, intuitive use</li>
+                <li>Rapid prototypes to tune restoring torque and damping</li>
+              </ul>
+            </div>
+            <div class="proj-media"><img src="steadystride-sketch.jpg" alt="Sketches and early prototypes" /></div>
+          </div>
+        </section>
+
+        <section id="mechanism" class="proj-section">
+          <h3>Mechanism (How it works)</h3>
+          <div class="proj-grid">
+            <div class="proj-media"><img src="steadystride-cad.jpg" alt="CAD assembly" /></div>
+            <div>
+              <p>The handle houses a tuned mechanical element that produces a mild restoring torque when the cane deviates from neutral, helping the user re‑align. The distal tip maintains grip while the internal linkage filters small jitters but allows intentional motion.</p>
+              <ul>
+                <li>Adjustable restoring torque with interchangeable components</li>
+                <li>Fail‑safe mechanical stops prevent over‑rotation</li>
+                <li>Modular tip for different surfaces</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="testing" class="proj-section">
+          <h3>Testing &amp; Results</h3>
+          <div class="proj-grid">
+            <div class="proj-card">
+              <h2 style="font-size:18px; margin-bottom:6px;">Bench</h2>
+              <p class="proj-note">Instron torque–angle characterization across prototypes.</p>
+            </div>
+            <div class="proj-card">
+              <h2 style="font-size:18px; margin-bottom:6px;">Pilot Usability</h2>
+              <p class="proj-note">Qualitative feedback on comfort, perceived stability, and setup time.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="gallery" class="proj-section">
+          <h3>Gallery</h3>
+          <div class="proj-grid">
+            <div class="proj-media"><img src="steadystride-photo1.jpg" alt="Prototype photo 1" /></div>
+            <div class="proj-media"><img src="steadystride-photo2.jpg" alt="Prototype photo 2" /></div>
+            <div class="proj-media"><img src="steadystride-photo3.jpg" alt="Usability testing" /></div>
+            <div class="proj-media"><video src="steadystride-demo.mp4" autoplay muted loop playsinline></video></div>
+          </div>
+        </section>
+
+        <section id="downloads" class="proj-section">
+          <h3>Downloads</h3>
+          <div class="proj-cta">
+            <a class="btn pink" href="assets/steadystride_onepager.pdf" download>One‑Pager (PDF)</a>
+            <a class="btn pink outline" href="assets/steadystride_poster.pdf" download style="margin-left:8px;">Poster (PDF)</a>
+          </div>
+          <p class="proj-note" style="margin-top:10px;">Looking for detailed data or CAD? Contact me and I’ll share a sanitized package.</p>
+        </section>
+      </div>
     </div>
-  </section>
-
-  <!-- CONTENT -->
-  <main class="page" role="main">
-    <!-- Quick Summary cards -->
-    <section class="spec-cards">
-      <article>
-        <h3>Problem</h3>
-        <p>Hand tremor and uneven ground can destabilize a traditional cane, increasing effort and fall risk.</p>
-      </article>
-      <article>
-        <h3>Outcome</h3>
-        <p>A passive self-stabilizing head that filters high-frequency inputs and auto-levels the tip.</p>
-      </article>
-      <article>
-        <h3>Impact</h3>
-        <p>Prototype demonstrated smoother tip contact and improved perceived stability in pilot tests (n=6).</p>
-      </article>
-    </section>
-
-    <!-- Two-column narrative -->
-    <section class="case-grid">
-      <div>
-        <h2>Overview</h2>
-        <p>SteadyStride is a cane add-on that passively stabilizes the tip using a compact mechanism. The design
-          reduces transmission of high-frequency tremor and helps the tip maintain normal contact with the floor.</p>
-
-        <h2>My Role</h2>
-        <ul>
-          <li>Concept generation, mechanism trade studies (flexures vs. bearings vs. compliant linkages)</li>
-          <li>CAD, DFM, and rapid prototyping (SLA/FFF prints, machined parts)</li>
-          <li>Bench testing (step/impulse response) & early hallway/user sessions</li>
-        </ul>
-
-        <h2>Design Requirements</h2>
-        <ul>
-          <li>Passive (no batteries), compact, retrofittable to standard cane shafts</li>
-          <li>Attenuate 6–12 Hz hand tremor without feeling “mushy” during stance</li>
-          <li>Durable in outdoor conditions; tip must remain grippy and replaceable</li>
-        </ul>
-      </div>
-
-      <div>
-        <h2>Approach</h2>
-        <p>We explored two architectures: a viscously-damped gimbal and a compliant-pivot with tuned stiffness.
-           Early benchtop rigs quantified tip displacement vs. input frequency. Final alpha used a low-profile
-           gimbal with viscoelastic pads providing phase lead and energy dissipation.</p>
-
-        <h2>Testing</h2>
-        <ul>
-          <li>Bench: sinusoidal input 2–15 Hz, tip travel &lt; 40% baseline at 8–10 Hz</li>
-          <li>Pilot walks (n=6): perceived smoothness ↑; planting accuracy ↑; learning time &lt; 5 min</li>
-          <li>Durability: 5,000 plant cycles with no loosening; pads replaceable</li>
-        </ul>
-
-        <h2>Status</h2>
-        <p>Alpha prototype complete; next steps include extended trials, pad material optimization, and
-           tool-less service features.</p>
-      </div>
-    </section>
-
-    <!-- Image gallery -->
-    <section class="gallery">
-      <figure>
-        <img src="steadystride-assembly.jpg" alt="Exploded view of the mechanism" />
-        <figcaption>Exploded view of the stabilizing head (rev B).</figcaption>
-      </figure>
-      <figure>
-        <img src="steadystride-bench.jpg" alt="Benchtop test rig" />
-        <figcaption>Benchtop rig for frequency response characterization.</figcaption>
-      </figure>
-      <figure>
-        <img src="steadystride-inuse.jpg" alt="User walking test" />
-        <figcaption>Hallway user test evaluating tip tracking and planting.</figcaption>
-      </figure>
-    </section>
-
-    <!-- Specs / materials -->
-    <section class="spec-table">
-      <h2>Build Specs</h2>
-      <ul>
-        <li>Mass: ~280 g add-on</li>
-        <li>Envelope: 62 mm Ø × 45 mm height</li>
-        <li>Materials: PA12, TPU (pads), 6061-T6, stainless fasteners</li>
-        <li>Processes: SLA/FFF print, CNC, laser-cut elastomer</li>
-      </ul>
-      <p><a class="link" href="SteadyStride_OnePager.pdf" target="_blank" rel="noopener">One-pager (PDF)</a></p>
-    </section>
 
     <footer class="site-footer">
       <div>© Angela Altamirano — Built with HTML &amp; CSS</div>
     </footer>
-  </main>
+  </div>
 
-  <!-- Mobile Nav -->
-  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
-    <div class="box" role="dialog" aria-modal="true">
-      <a href="index.html" onclick="closeMenu()">Home</a>
-      <a href="about.html" onclick="closeMenu()">About</a>
-      <a href="works.html" onclick="closeMenu()">Works</a>
-      <a href="index.html#resume" onclick="closeMenu()">Resume</a>
-      <button
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    function openMenu() { mobileNav.classList.add('open'); mobileNav.setAttribute('aria-hidden', 'false'); menuBtn.setAttribute('aria-expanded', 'true'); }
+    function closeMenu() { mobileNav.classList.remove('open'); mobileNav.setAttribute('aria-hidden', 'true'); menuBtn.setAttribute('aria-expanded', 'false'); }
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => {
+        mobileNav.classList.contains('open') ? closeMenu() : openMenu();
+      });
+      window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+    }
+  </script>
+</body>
+</html>
