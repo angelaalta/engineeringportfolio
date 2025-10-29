@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GERDSense Pacifier | Angela Altamirano</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Page-local styles copied from SteadyStride to keep identical aesthetics */
+    :root { --ink: var(--text); --mutedInk: var(--muted); --edge: #e5e7eb; }
+
+    .proj-hero {
+      background: #674148; color: #fff; margin-top: 45px;
+      border-radius: 14px; padding: 28px;
+      display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+    }
+    .proj-hero h1{
+      margin:0 0 8px 0; font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(28px, 5vw, 54px); line-height:1.02;
+    }
+    .proj-hero .sub{ margin:6px 0 0; font-size:clamp(14px,1.8vw,18px); color:rgba(255,255,255,.9); }
+    .proj-hero .meta{ margin-top:12px; display:flex; flex-wrap:wrap; gap:10px; }
+    .proj-badge{
+      background: rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.35);
+      padding:8px 12px; border-radius:999px; font-weight:700; font-size:12px; letter-spacing:.02em;
+    }
+    .proj-hero-media{ border-radius:12px; overflow:hidden; background:#996260; min-height:260px; position:relative; }
+    .proj-hero-media img,.proj-hero-media video{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+
+    .proj-layout{ display:grid; grid-template-columns:minmax(220px,280px) 1fr; gap:28px; margin-top:26px; }
+    .proj-card{ background:#fff; border:1px solid var(--edge); border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,.08); padding:20px; }
+    .proj-card h2{ margin:0 0 10px; font-size:20px; }
+    .proj-card p{ margin:0 0 10px; line-height:1.6; }
+
+    .proj-toc{ position:sticky; top:16px; align-self:start; }
+    .proj-toc a{
+      display:block; text-decoration:none; color:var(--mutedInk);
+      padding:8px 10px; border-radius:8px; font-weight:700;
+    }
+    .proj-toc a:hover{ color:var(--ink); background:#f7f7f9; }
+
+    .proj-section{ background:#fff; border:1px solid var(--edge); border-radius:12px; padding:22px; margin-bottom:24px; box-shadow:0 8px 20px rgba(0,0,0,.06); }
+    .proj-section h3{ margin:0 0 10px; font-size:18px; }
+
+    .proj-specs{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+    .proj-spec{ border:1px dashed var(--edge); border-radius:10px; padding:12px; }
+    .proj-spec .k{ color:var(--mutedInk); font-size:12px; text-transform:uppercase; letter-spacing:.04em; }
+    .proj-spec .v{ font-weight:700; margin-top:4px; }
+
+    .pill{ display:inline-block; font-size:12px; padding:6px 10px; border-radius:999px; border:1px solid var(--edge); background:#fafafc; }
+
+    .proj-grid{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:14px; align-items:stretch; }
+    .proj-media{ position:relative; border-radius:12px; overflow:hidden; min-height:220px; }
+    .proj-media img,.proj-media video{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+
+    .pdf-block{ margin-top:14px; }
+    .pdf-toolbar{ display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
+    .pdf-title{ font-weight:700; }
+    .pdf-actions{ display:flex; gap:8px; }
+    .pdf-btn{ display:inline-block; padding:6px 10px; border-radius:8px; border:1px solid var(--edge); text-decoration:none; }
+    .pdf-btn.primary{ background:#d77a8f; color:#fff; border:none; }
+    .pdf-btn.primary:hover{ filter:brightness(.95); }
+
+    @media (max-width:980px){
+      .proj-hero{ grid-template-columns:1fr; }
+      .proj-layout{ grid-template-columns:1fr; }
+      .proj-grid,.proj-specs{ grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page" role="main">
+    <!-- Header -->
+    <header class="site-header">
+      <div class="brand">
+        <div class="brand-name">Angela Altamirano</div>
+        <div class="brand-sub">Cornell University • B.S. Biomedical Engineering • M.Eng. Mechanical Engineering</div>
+      </div>
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="works.html" class="active">Works</a>
+        <a href="resume.html">Resume</a>
+      </nav>
+      <button class="menu-btn" aria-controls="mobile-nav" aria-expanded="false" id="menuBtn">☰</button>
+    </header>
+
+    <!-- Mobile nav -->
+    <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+      <div class="box" role="dialog" aria-modal="true">
+        <a href="index.html" onclick="closeMenu()">Home</a>
+        <a href="works.html" onclick="closeMenu()">Works</a>
+        <a href="about.html" onclick="closeMenu()">About</a>
+        <a href="resume.html" onclick="closeMenu()">Resume</a>
+        <button class="close-btn" onclick="closeMenu()">Close</button>
+      </div>
+    </div>
+    <div class="return-bar">
+      <a href="works.html" class="btn-return">← Return to Works Page</a>
+    </div>
+
+    <!-- Hero -->
+    <section class="proj-hero">
+      <div>
+        <h1><em>GERDSense:</em> Pacifier-Integrated Millifluidic Diagnostic for Infant GERD</h1>
+        <p class="sub">A comfortable, non-invasive pacifier that passively transports oral samples to an external pH sensor for continuous GERD monitoring.</p>
+        <div class="meta">
+          <span class="proj-badge">Role: Device Design & Prototyping</span>
+          <span class="proj-badge">InfantGuard Team</span>
+          <span class="proj-badge">2025</span>
+        </div>
+      </div>
+      <div class="proj-hero-media">
+        <!-- Replace with a hero image or short looped video -->
+        <img src="gerdsense-hero.jpg" alt="GERDSense pacifier concept rendering">
+      </div>
+    </section>
+
+    <!-- Body layout -->
+    <div class="proj-layout">
+      <!-- Left column: TOC + specs -->
+      <aside class="proj-card proj-toc">
+        <h2 style="margin-bottom:8px;">On this page</h2>
+        <nav>
+          <a href="#summary">Summary</a>
+          <a href="#problem">Problem & Approach</a>
+          <a href="#mechanism">Mechanism</a>
+          <a href="#testing">Testing & Results</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#downloads">Downloads</a>
+        </nav>
+        <hr style="border:none; border-top:1px solid var(--edge); margin:14px 0;" />
+        <div class="proj-specs">
+          <div class="proj-spec">
+            <div class="k">Team</div>
+            <div class="v">InfantGuard (Cornell Engineering)</div>
+          </div>
+          <div class="proj-spec">
+            <div class="k">Clinical Partners</div>
+            <div class="v">Weill Cornell Medicine</div>
+          </div>
+          <div class="proj-spec">
+            <div class="k">My Scope</div>
+            <div class="v">Literature → COMSOL → Prototyping → Integration</div>
+          </div>
+          <div class="proj-spec">
+            <div class="k">Tools</div>
+            <div class="v">COMSOL, CAD, Formlabs, PDMS/flex resins</div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Right column: content -->
+      <div>
+        <section id="summary" class="proj-section">
+          <h3>Summary</h3>
+          <p>
+            GERDSense is a pacifier-integrated millifluidic system that non-invasively detects infant
+            gastroesophageal reflux by transporting saliva/reflux samples to an external reservoir
+            housing a pH sensor. Fluid motion is powered passively by infant non-nutritive sucking,
+            capillary action, and a miniature siphon-like “button,” enabling comfortable, continuous
+            monitoring in home and clinical settings.
+          </p>
+          <div class="pill">Non-invasive</div>
+          <div class="pill">Continuous monitoring</div>
+          <div class="pill">Power-free flow</div>
+        </section>
+
+        <section id="problem" class="proj-section">
+          <h3>Problem &amp; Approach</h3>
+          <div class="proj-grid">
+            <div>
+              <p><strong>The problem:</strong> Infant GERD symptoms are non-specific, and current diagnostics (pH probes, Bravo capsules) are invasive and ill-suited for continuous use.</p>
+              <p><strong>Our approach:</strong> Build a comfortable pacifier that quietly samples oral fluid and routes it to a protected pH sensor. Early research explored hydrophilic/hydrophobic membranes and umbrella vs. duckbill check valves to ensure one-way flow under realistic infant oral pressures. We selected duckbill valves and refined channel geometry and reservoir volume through iterative COMSOL simulations and clinician feedback.</p>
+              <ul>
+                <li>Laminar, low-pressure flow path optimized for saliva transport</li>
+                <li>Valve placement to prevent backflow and stagnation</li>
+                <li>Anatomical fit validated via scans of a Philips Avent pacifier</li>
+              </ul>
+            </div>
+            <div class="proj-media">
+              <img src="gerdsense-sketch.jpg" alt="Early valve and channel concept sketches">
+            </div>
+          </div>
+        </section>
+
+        <section id="mechanism" class="proj-section">
+          <h3>Mechanism (How it works)</h3>
+          <div class="proj-grid">
+            <div class="proj-media">
+              <img src="gerdsense-cad.jpg" alt="CAD showing channels, button reservoir, and valve locations">
+            </div>
+            <div>
+              <p>
+                <strong>Millifluidic insert:</strong> slim channel network laminated to the roof of the pacifier teat collects oral samples through multiple inlets and merges flow into a compressible “button” mini-reservoir.
+              </p>
+              <p>
+                <strong>Passive transport:</strong> non-nutritive sucking and capillary forces pull fluid through the channels; a negative-pressure pulse from the button aids siphoning. Strategically placed <em>duckbill valves</em> maintain one-way movement and measurement integrity.
+              </p>
+              <p>
+                <strong>External pH reservoir:</strong> tubing routes sample to a small chamber with a pH sensor; valves above/below the sensor control contact time for accurate readings. Data is displayed on a companion smartphone app.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="testing" class="proj-section">
+          <h3>Testing &amp; Results</h3>
+          <div class="proj-grid">
+            <div class="proj-card">
+              <h2 style="font-size:18px; margin-bottom:6px;">Simulation (COMSOL)</h2>
+              <ul>
+                <li>Laminar flow confirmed with smooth velocity fields and no backflow/stagnation.</li>
+                <li>Structural analysis under ~4–9 kPa oral pressures showed safe elastic deformation.</li>
+                <li>Iterative geometry changes (larger reservoir, filleted turns, wider inlets/outlets) improved throughput and anatomical fit.</li>
+              </ul>
+            </div>
+            <div class="proj-card">
+              <h2 style="font-size:18px; margin-bottom:6px;">Prototyping & Integration</h2>
+              <ul>
+                <li>Macro model validated flow concepts and valve choices (duckbill vs. umbrella).</li>
+                <li>3D-printed millifluidic prototypes (Flex 80A V2) verified channel width and “button” function.</li>
+                <li>Insert adhered laminarily to a commercial pacifier; alternative placements were evaluated but rejected to avoid diluting reflux with sublingual saliva.</li>
+              </ul>
+            </div>
+          </div>
+          <p class="proj-note">Next: embed calibrated pH sensor, benchtop validation with synthetic saliva across pH range, IRB prep, and pilot testing.</p>
+        </section>
+
+        <section id="gallery" class="proj-section">
+          <h3>Gallery</h3>
+          <div class="proj-grid">
+            <div class="proj-media"><img src="gerdsense-photo1.jpg" alt="Macrofluidic benchtop setup"></div>
+            <div class="proj-media"><img src="gerdsense-photo2.jpg" alt="Printed millifluidic prototype"></div>
+            <div class="proj-media"><img src="gerdsense-photo3.jpg" alt="Pacifier integration mockup"></div>
+            <div class="proj-media"><video src="gerdsense-demo.mp4" autoplay muted loop playsinline></video></div>
+          </div>
+        </section>
+
+        <section id="downloads" class="proj-section">
+          <h3>Project Files</h3>
+
+          <!-- Final Report PDF (embedded preview, not auto-download) -->
+          <div class="pdf-block">
+            <div class="pdf-toolbar">
+              <div class="pdf-title">Final Report (Spring 2025)</div>
+              <div class="pdf-actions">
+                <a class="pdf-btn primary" href="Infant_GERD_Final_Report.pdf" download>Download .pdf</a>
+                <a class="pdf-btn" href="Infant_GERD_Final_Report.pdf" target="_blank" rel="noopener">Open in new tab</a>
+              </div>
+            </div>
+            <iframe class="pdf-frame" src="Infant_GERD_Final_Report.pdf" width="100%" height="560"
+              style="border:1px solid var(--edge); border-radius:8px;" title="Final Report PDF">
+            </iframe>
+          </div>
+
+          <!-- Project Abstract PDF -->
+          <div class="pdf-block">
+            <div class="pdf-toolbar">
+              <div class="pdf-title">Project Abstract</div>
+              <div class="pdf-actions">
+                <a class="pdf-btn primary" href="GERDSense_Project_Abstract.pdf" download>Download .pdf</a>
+                <a class="pdf-btn" href="GERDSense_Project_Abstract.pdf" target="_blank" rel="noopener">Open in new tab</a>
+              </div>
+            </div>
+            <iframe class="pdf-frame" src="GERDSense_Project_Abstract.pdf" width="100%" height="480"
+              style="border:1px solid var(--edge); border-radius:8px;" title="Abstract PDF">
+            </iframe>
+          </div>
+
+          <p class="proj-note" style="margin-top:10px;">Files may take a few seconds to load depending on size.</p>
+        </section>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div>© Angela Altamirano – Built with HTML &amp; CSS</div>
+    </footer>
+  </div>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    function openMenu(){ mobileNav.classList.add('open'); mobileNav.setAttribute('aria-hidden','false'); menuBtn.setAttribute('aria-expanded','true'); }
+    function closeMenu(){ mobileNav.classList.remove('open'); mobileNav.setAttribute('aria-hidden','true'); menuBtn.setAttribute('aria-expanded','false'); }
+    if(menuBtn){
+      menuBtn.addEventListener('click',()=>{ mobileNav.classList.contains('open') ? closeMenu() : openMenu(); });
+      window.addEventListener('keydown',(e)=>{ if(e.key==='Escape') closeMenu(); });
+    }
+  </script>
+</body>
+</html>
