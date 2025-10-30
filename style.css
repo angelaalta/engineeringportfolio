@@ -597,6 +597,78 @@ body.about {
 
 /* STEADYSTRIDE */
 
+/* ===== Summary polish ===== */
+.summary-card {
+  /* soft background + subtle border to separate from page */
+  background: radial-gradient(120% 140% at 0% 0%, #ffffff 0%, #fafafb 60%, #f6f7f9 100%);
+  border: 1px solid var(--edge);
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.9fr;   /* give copy room, keep photo elegant */
+  gap: 22px;
+  align-items: center;
+}
+
+.summary-copy {
+  max-width: 62ch;                       /* prettier line length */
+  font-size: 1.0rem;
+  line-height: 1.2;
+}
+
+.pill-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.pill {                                  /* reuses your pill but makes it a touch lighter */
+  display: inline-block;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--edge);
+  background: #fff;
+}
+
+/* Framed photo with soft shadow and optional caption */
+.photo-frame {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--edge);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+  background: #f7f8fb;
+}
+
+.photo-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;          /* fills nicely; use 'contain' if you want the whole image */
+  aspect-ratio: 4 / 5;        /* portrait look; tweak to 3/4 or 1/1 if you prefer */
+}
+
+.photo-frame figcaption {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  padding: 6px 10px;
+  font-size: 12px;
+  color: #fff;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(2px);
+  border-radius: 8px;
+}
+
+/* Responsive stacking */
+@media (max-width: 980px) {
+  .summary-grid { grid-template-columns: 1fr; }
+  .photo-frame img { aspect-ratio: auto; max-height: 360px; object-fit: cover; }
+}
+
 
 /* Smooth scrolling + anchor offset so headings aren't hidden by the header */
 html {
@@ -608,6 +680,86 @@ html {
 .proj-section {
   scroll-margin-top: var(--anchor-offset);
 }
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.pill-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Framed image styling */
+.photo-frame {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--edge);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+  background: #f9f9fb;
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 4 / 5;
+}
+
+.photo-frame figcaption {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  backdrop-filter: blur(3px);
+}
+
+@media (max-width: 980px) {
+  .summary-grid { grid-template-columns: 1fr; }
+  .photo-frame img { aspect-ratio: auto; max-height: 340px; object-fit: cover; }
+}
+
+
+/* Make problem photo wider instead of taller */
+.proj-grid.problem-grid {
+  grid-template-columns: 1.2fr 1fr; /* image section gets more width */
+  align-items: center;
+}
+
+.proj-media.wide {
+  min-height: 320px;  /* moderate height */
+}
+
+.proj-media.wide img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+/* Figure caption styling for all project media */
+.proj-media figcaption {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  backdrop-filter: blur(3px);
+}
+
 
 /* ===== Return Button Styles ===== */
 /* ===== Return Button Styles ===== */
@@ -698,3 +850,24 @@ html {
   display: block;
   background: #eee; /* subtle while loading */
 }
+
+/* === GERD PAGE === */
+
+/* === Rounded Photos for Consistent Aesthetics === */
+.proj-media,
+.proj-hero-media {
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.proj-media img,
+.proj-media video,
+.proj-hero-media img,
+.proj-hero-media video {
+  border-radius: 14px; /* matches overall design */
+  object-fit: cover;
+  display: block;
+}
+
+/* Optional: if you ever want perfect circles, switch to border-radius: 50%; */
+
