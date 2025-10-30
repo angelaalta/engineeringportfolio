@@ -16,16 +16,14 @@
 
         .proj-hero {
             background: #674148;
-            /* matches your brand burgundy */
             color: #fff;
             margin-top: 45px;
-            /* breathing room below the header */
             border-radius: 14px;
             padding: 28px;
             display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
+            grid-template-columns: 1fr 1fr;
             gap: 24px;
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, .25);
         }
 
         .proj-hero h1 {
@@ -49,8 +47,8 @@
         }
 
         .proj-badge {
-            background: rgba(255, 255, 255, 0.12);
-            border: 1px solid rgba(255, 255, 255, 0.35);
+            background: rgba(255, 255, 255, .12);
+            border: 1px solid rgba(255, 255, 255, .35);
             padding: 8px 12px;
             border-radius: 999px;
             font-weight: 700;
@@ -72,7 +70,7 @@
             inset: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
         }
 
         .proj-layout {
@@ -86,7 +84,7 @@
             background: #fff;
             border: 1px solid var(--edge);
             border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, .08);
             padding: 20px;
         }
 
@@ -167,10 +165,11 @@
             background: #fafafc;
         }
 
+        /* Reusable media blocks */
         .proj-grid {
             display: grid;
-            grid-template-columns: 0.9fr 1.1fr;
-            gap: 14px;
+            grid-template-columns: 1.5fr 1.5fr;
+            gap: 10px;
             align-items: stretch;
         }
 
@@ -179,7 +178,6 @@
             border-radius: 12px;
             overflow: hidden;
             min-height: 220px;
-            /* frame even without intrinsic size */
         }
 
         .proj-media img,
@@ -190,6 +188,47 @@
             height: 100%;
             object-fit: cover;
         }
+
+        /* New helper: use object-fit: contain to show whole image */
+        .proj-media.contain img,
+        .proj-media.contain video {
+            object-fit: contain;
+            background: #f7f7f9;
+        }
+
+        /* ---- Summary side-by-side (NEW) ---- */
+        .summary-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 18px;
+            align-items: center;
+        }
+
+        .summary-media {
+            border-radius: 12px;
+            overflow: hidden;
+            background: #f7f7f9;
+        }
+
+        .summary-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            max-height: 420px;
+        }
+
+        /* Slightly larger media at request */
+        .larger-media {
+            min-height: 420px;
+        }
+
+        /* for Problem & Approach image */
+        .slightly-larger-media {
+            min-height: 460px;
+        }
+
+        /* for Mechanism image */
 
         .proj-cta {
             text-align: center;
@@ -203,7 +242,7 @@
         }
 
         .btn.pink:hover {
-            filter: brightness(0.95);
+            filter: brightness(.95);
         }
 
         .btn.pink.outline {
@@ -222,7 +261,7 @@
             font-size: 13px;
         }
 
-        @media (max-width: 980px) {
+        @media (max-width:980px) {
             .proj-hero {
                 grid-template-columns: 1fr;
             }
@@ -234,6 +273,14 @@
             .proj-grid,
             .proj-specs {
                 grid-template-columns: 1fr;
+            }
+
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .summary-media img {
+                max-height: 320px;
             }
         }
     </style>
@@ -267,6 +314,7 @@
                 <button class="close-btn" onclick="closeMenu()">Close</button>
             </div>
         </div>
+
         <div class="return-bar">
             <a href="works.html" class="btn-return">← Return to Works Page</a>
         </div>
@@ -280,11 +328,10 @@
                 <div class="meta">
                     <span class="proj-badge">Role: Project Manager</span>
                     <span class="proj-badge">1st Place – BMES/Medtronic Student Design Competition (2024)</span>
-                    <span class="proj-badge">September 2023 - May 2024</span>
+                    <span class="proj-badge">August 2023 - May 2024</span>
                 </div>
             </div>
             <div class="proj-hero-media">
-                <!-- Replace with your image or a short looped demo -->
                 <img src="screen.png" alt="SteadyStride cane hero image" />
             </div>
         </section>
@@ -306,40 +353,61 @@
                 <div class="proj-specs">
                     <div class="proj-spec">
                         <div class="k">Team</div>
-                        <div class="v">SteadyStride (Cornell Engineering)</div>
+                        <div class="v">Cornell DEBUT</div>
+                    </div>
+                    <div class="proj-spec">
+                        <div class="k">Role</div>
+                        <div class="v">Project Manager</div>
                     </div>
                     <div class="proj-spec">
                         <div class="k">Timeline</div>
-                        <div class="v">2023–2025</div>
-                    </div>
-                    <div class="proj-spec">
-                        <div class="k">My Scope</div>
-                        <div class="v">Need-finding → CAD → Prototyping → IRB testing</div>
+                        <div class="v">September 2023 - May 2024</div>
                     </div>
                     <div class="proj-spec">
                         <div class="k">Tools</div>
-                        <div class="v">SolidWorks, Instron, MATLAB</div>
+                        <div class="v">Matlab, Fusion 360, 3D Printing, Manual Mill</div>
                     </div>
                 </div>
             </aside>
 
             <!-- Right column: Content sections -->
             <div>
-                <section id="summary" class="proj-section">
+                <!-- SUMMARY with side photo (NEW) -->
+                <section id="summary" class="proj-section summary-card">
                     <h3>Summary</h3>
-                    <p>SteadyStride is a self-stabilizing cane that integrates a lateral <strong>tuned-mass damper
-                            (TMD)</strong> into the handle and pairs it with a grippy, treaded base. The TMD oscillates
-                        out of phase with tremor inputs, passively restoring the cane toward center, while the base
-                        increases traction on common surfaces. The design is fully mechanical—no batteries, no
-                        charging—so it stays light, discreet, and reliable.</p>
-                    <div class="pill">Passive damping</div>
-                    <div class="pill">All-terrain base</div>
-                    <div class="pill">Battery-free</div>
+                    <div class="summary-grid">
+                        <div class="summary-copy">
+                            <p>SteadyStride is a self-stabilizing cane that integrates a lateral tuned-mass damper (TMD)
+                                into the handle and pairs it with a grippy, treaded base.
+                            </p>
+
+                            <p>The TMD oscillates out of phase with tremor inputs, passively restoring the cane toward
+                                center,
+                                while the base increases traction on common surfaces. The design is fully mechanical,
+                                requiring
+                                no batteries or charging so it stays light, discreet, and reliable.</p>
+
+                            <div class="pill-group">
+                                <span class="pill">Passive damping</span>
+                                <span class="pill">All-terrain base</span>
+                                <span class="pill">Battery-free</span>
+                            </div>
+                        </div>
+
+                        <!-- Swap the src to any image you prefer -->
+                        <figure class="photo-frame">
+                            <img src="steadystride photos/trophy.jpg" alt="Angela with BMES/Medtronic award" />
+                            <!-- Optional: delete the caption if you don't want it -->
+                            <figcaption>1st Place: BMES/Medtronic Student Design Competition</figcaption>
+                        </figure>
+                    </div>
                 </section>
 
+
+                <!-- PROBLEM & APPROACH: bigger photo, full image visible -->
                 <section id="problem" class="proj-section">
                     <h3>Problem &amp; Approach</h3>
-                    <div class="proj-grid">
+                    <div class="proj-grid problem-grid" style="gap: 20px;">
                         <div>
                             <p>People with Parkinson's Disease frequently face freezing of gait, tremor propagation
                                 through assistive devices, and balance challenges that limit independence. Traditional
@@ -356,23 +424,31 @@
                                     sit-to-stand, and stairs.</li>
                             </ul>
                         </div>
-                        <div class="proj-media"><img src="steadystride-sketch.jpg"
-                                alt="Sketches and early prototypes" /></div>
+
+                        <!-- Use figure so figcaption works -->
+                        <figure class="proj-media wide">
+                            <img src="steadystride photos/team2.JPG" alt="SteadyStride team and participants" />
+                            <figcaption>IRB Testing (Photo Consent Given)</figcaption>
+                        </figure>
                     </div>
                 </section>
 
+
+
+                <!-- MECHANISM: slightly larger image -->
                 <section id="mechanism" class="proj-section">
                     <h3>Mechanism (How it works)</h3>
-                    <div class="proj-grid">
-                        <div class="proj-media"><img src="steadystride-cad.jpg" alt="CAD assembly with lateral TMD" />
+                    <div class="proj-grid" style="grid-template-columns: 1.1fr 0.9fr; gap:16px; align-items:center;">
+                        <div class="proj-media contain slightly-larger-media">
+                            <img src="parts.png" alt="CAD assembly with lateral TMD" />
                         </div>
                         <div>
-                            <p><strong>Tuned-Mass Damper (TMD) in the handle:</strong> a laterally tuned mass–spring
+                            <p><strong>Tuned-Mass Damper (TMD) in Cane Shaft:</strong> a lateral tuned mass–spring
                                 system oscillates when tremor input is applied. Because of phase lag and inertia, its
                                 motion counteracts the input and reduces the cane's angular displacement. Mass and
                                 stiffness are swappable to tailor the response to user needs. Mechanical stops limit
                                 travel for safety.</p>
-                            <p><strong>Stabilizing base:</strong> a flexible, non-slip tread increases surface grip and
+                            <p><strong>Stabilizing Base:</strong> a flexible, non-slip tread increases surface grip and
                                 helps maintain stability during directional changes and turning, especially on smooth
                                 floors and typical outdoor paths.</p>
                         </div>
@@ -383,10 +459,10 @@
                     <h3>Testing &amp; Results</h3>
                     <div class="proj-grid">
                         <div class="proj-card">
-                            <h2 style="font-size:18px; margin-bottom:6px;">IRB Pilot (SUNY Cortland Biomechanics Lab)
-                            </h2>
-                            <p class="proj-note">Motions tested: no-motion baseline, straight walking, left/right turns,
-                                sit-to-stand, stairs.</p>
+                            <h2 style="font-size:18px; margin-bottom:6px;">IRB Pilot Study (SUNY Cortland Biomechanics
+                                Lab)</h2>
+                            <p class="proj-note">Mobility Tasks: No-Motion (baseline), straight walking, left/right
+                                turns, sit-to-stand, stand-to-sit, walking up/down stairs.</p>
                             <ul>
                                 <li>Qualitative comfort/setup feedback recorded with participant consent.</li>
                                 <li>Benchtop testing included torque–angle characterization across prototypes.</li>
@@ -400,15 +476,17 @@
                         </div>
                     </div>
                 </section>
+
                 <section id="gallery" class="proj-section">
                     <h3>Gallery</h3>
                     <div class="proj-grid">
-                        <div class="proj-media"><img src="steadystride-photo1.jpg" alt="Prototype photo 1" /></div>
-                        <div class="proj-media"><img src="steadystride-photo2.jpg" alt="Prototype photo 2" /></div>
-                        <div class="proj-media"><img src="steadystride-photo3.jpg" alt="IRB testing (consented)" />
+                        <div class="proj-media"><img src="steadystride photos/BMES.jpg" alt="Prototype photo 1" /></div>
+                        <div class="proj-media"><img src="steadystride photos/comparison.JPG" alt="Prototype photo 2" />
                         </div>
-                        <div class="proj-media"><video src="steadystride-demo.mp4" autoplay muted loop
-                                playsinline></video></div>
+                        <div class="proj-media"><img src="steadystride photos/glove.JPG"
+                                alt="IRB testing (consented)" /></div>
+                        <div class="proj-media"><img src="steadystride photos/base.JPG" alt="IRB testing (consented)" />
+                        </div>
                     </div>
                 </section>
 
@@ -420,33 +498,30 @@
                             <div class="pdf-title">BMES/Medtronic Presentation Deck</div>
                             <div class="pdf-actions">
                                 <a class="pdf-btn primary" href="SteadyStride_SlideDeck.pdf" download>Download .pdf</a>
-                                <a class="pdf-btn" href="SteadyStride_SlideDeck.pdf" target="_blank" rel="noopener">Open in new tab</a>
+                                <a class="pdf-btn" href="SteadyStride_SlideDeck.pdf" target="_blank" rel="noopener">Open
+                                    in new tab</a>
                             </div>
                         </div>
-                        <iframe class="pdf-frame" src="SteadyStride_SlideDeck.pdf" width="100%" height="580" style="border:1px solid var(--edge); border-radius:8px;" title="Presentation PDF">
-                        </iframe>
+                        <iframe class="pdf-frame" src="SteadyStride_SlideDeck.pdf" width="100%" height="530"
+                            style="border:1px solid var(--edge); border-radius:8px;" title="Presentation PDF"></iframe>
                     </div>
 
-                    <p class="proj-note" style="margin-top:10px;">
-                        Files may take a few seconds to load due to size.
-                    </p>
+                    <p class="proj-note" style="margin-top:10px;">Files may take a few seconds to load due to size.</p>
 
-                     <!-- Poster -->
+                    <!-- Poster -->
                     <div class="pdf-block">
                         <div class="pdf-toolbar">
                             <div class="pdf-title">Poster</div>
                             <div class="pdf-actions">
-                                <a class="pdf-btn primary" href="steadystride_poster.pdf" download>Download .pdf</a>
-                                <a class="pdf-btn" href="steadystride_poster.pdf" target="_blank" rel="noopener">Open in new tab</a>
+                                <a class="pdf-btn primary" href="SteadyStride_Poster.pdf" download>Download .pdf</a>
+                                <a class="pdf-btn" href="SteadyStride_Poster.pdf" target="_blank" rel="noopener">Open in
+                                    new tab</a>
                             </div>
                         </div>
-                        <iframe class="pdf-frame" src="steadystride_poster.pdf" width="100%" height="520" style="border:1px solid var(--edge); border-radius:8px;" title="Poster PDF">
-                        </iframe>
+                        <iframe class="pdf-frame" src="SteadyStride_Poster.pdf" width="100%" height="530"
+                            style="border:1px solid var(--edge); border-radius:8px;" title="Poster PDF"></iframe>
                     </div>
                 </section>
-
-
-
             </div>
         </div>
 
@@ -461,9 +536,7 @@
         function openMenu() { mobileNav.classList.add('open'); mobileNav.setAttribute('aria-hidden', 'false'); menuBtn.setAttribute('aria-expanded', 'true'); }
         function closeMenu() { mobileNav.classList.remove('open'); mobileNav.setAttribute('aria-hidden', 'true'); menuBtn.setAttribute('aria-expanded', 'false'); }
         if (menuBtn) {
-            menuBtn.addEventListener('click', () => {
-                mobileNav.classList.contains('open') ? closeMenu() : openMenu();
-            });
+            menuBtn.addEventListener('click', () => { mobileNav.classList.contains('open') ? closeMenu() : openMenu(); });
             window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
         }
     </script>
