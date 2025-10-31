@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,63 +8,253 @@
   <link rel="stylesheet" href="style.css" />
   <style>
     /* Keep visuals identical to SteadyStride/GERDSense pages */
-    :root { --ink: var(--text); --mutedInk: var(--muted); --edge: #e5e7eb; }
+    :root {
+      --ink: var(--text);
+      --mutedInk: var(--muted);
+      --edge: #e5e7eb;
+    }
 
     .proj-hero {
-      background: #674148; color: #fff; margin-top: 45px;
-      border-radius: 14px; padding: 28px;
-      display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px;
-      box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+      background: #674148;
+      color: #fff;
+      margin-top: 45px;
+      border-radius: 14px;
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
     }
-    .proj-hero h1{
-      margin:0 0 8px 0; font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(28px, 5vw, 54px); line-height:1.02;
+
+    .proj-hero h1 {
+      margin: 0 0 8px 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(28px, 5vw, 54px);
+      line-height: 1.02;
     }
-    .proj-hero .sub{ margin:6px 0 0; font-size:clamp(14px,1.8vw,18px); color:rgba(255,255,255,.9); }
-    .proj-hero .meta{ margin-top:12px; display:flex; flex-wrap:wrap; gap:10px; }
-    .proj-badge{
-      background: rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.35);
-      padding:8px 12px; border-radius:999px; font-weight:700; font-size:12px; letter-spacing:.02em;
+
+    .proj-hero .sub {
+      margin: 6px 0 0;
+      font-size: clamp(14px, 1.8vw, 18px);
+      color: rgba(255, 255, 255, .9);
     }
-    .proj-hero-media{ border-radius:12px; overflow:hidden; background:#996260; min-height:260px; position:relative; }
-    .proj-hero-media img,.proj-hero-media video{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
 
-    .return-bar{ margin-top:10px; }
-    .btn-return{ display:inline-block; text-decoration:none; padding:8px 12px; border-radius:10px; border:1px solid var(--edge); }
-
-    .proj-layout{ display:grid; grid-template-columns:minmax(220px,280px) 1fr; gap:28px; margin-top:26px; }
-    .proj-card{ background:#fff; border:1px solid var(--edge); border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,.08); padding:20px; }
-    .proj-card h2{ margin:0 0 10px; font-size:20px; }
-    .proj-card p{ margin:0 0 10px; line-height:1.6; }
-
-    .proj-toc{ position:sticky; top:16px; align-self:start; }
-    .proj-toc a{
-      display:block; text-decoration:none; color:var(--mutedInk);
-      padding:8px 10px; border-radius:8px; font-weight:700;
+    .proj-hero .meta {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
     }
-    .proj-toc a:hover{ color:var(--ink); background:#f7f7f9; }
 
-    .proj-section{ background:#fff; border:1px solid var(--edge); border-radius:12px; padding:22px; margin-bottom:24px; box-shadow:0 8px 20px rgba(0,0,0,.06); }
-    .proj-section h3{ margin:0 0 10px; font-size:18px; }
+    .proj-badge {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: .02em;
+    }
 
-    .pill{ display:inline-block; font-size:12px; padding:6px 10px; border-radius:999px; border:1px solid var(--edge); background:#fafafc; margin-right:6px; }
+    .proj-hero-media {
+      border-radius: 12px;
+      overflow: hidden;
+      background: #996260;
+      min-height: 260px;
+      position: relative;
+    }
 
-    .proj-grid{ display:grid; grid-template-columns:0.95fr 1.05fr; gap:14px; align-items:stretch; }
-    .proj-media{ position:relative; border-radius:12px; overflow:hidden; min-height:220px; }
-    .proj-media img,.proj-media video{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+    .proj-hero-media img,
+    .proj-hero-media video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-    .pdf-block{ margin-top:14px; }
-    .pdf-toolbar{ display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
-    .pdf-title{ font-weight:700; }
-    .pdf-actions{ display:flex; gap:8px; }
-    .pdf-btn{ display:inline-block; padding:6px 10px; border-radius:8px; border:1px solid var(--edge); text-decoration:none; }
-    .pdf-btn.primary{ background:#d77a8f; color:#fff; border:none; }
-    .pdf-btn.primary:hover{ filter:brightness(.95); }
+    .return-bar {
+      margin-top: 10px;
+    }
 
-    @media (max-width:980px){
-      .proj-hero{ grid-template-columns:1fr; }
-      .proj-layout{ grid-template-columns:1fr; }
-      .proj-grid{ grid-template-columns:1fr; }
+    .btn-return {
+      display: inline-block;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--edge);
+    }
+
+    .proj-layout {
+      display: grid;
+      grid-template-columns: minmax(220px, 280px) 1fr;
+      gap: 28px;
+      margin-top: 26px;
+    }
+
+    .proj-card {
+      background: #fff;
+      border: 1px solid var(--edge);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, .08);
+      padding: 20px;
+    }
+
+    .proj-card h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+    }
+
+    .proj-card p {
+      margin: 0 0 10px;
+      line-height: 1.6;
+    }
+
+    .proj-toc {
+      position: sticky;
+      top: 16px;
+      align-self: start;
+    }
+
+    .proj-toc a {
+      display: block;
+      text-decoration: none;
+      color: var(--mutedInk);
+      padding: 8px 10px;
+      border-radius: 8px;
+      font-weight: 700;
+    }
+
+    .proj-toc a:hover {
+      color: var(--ink);
+      background: #f7f7f9;
+    }
+
+    .proj-section {
+      background: #fff;
+      border: 1px solid var(--edge);
+      border-radius: 12px;
+      padding: 22px;
+      margin-bottom: 24px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, .06);
+    }
+
+    .proj-section h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+
+    .proj-specs {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .proj-spec {
+      border: 1px dashed var(--edge);
+      border-radius: 10px;
+      padding: 12px;
+    }
+
+    .proj-spec .k {
+      color: var(--mutedInk);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .proj-spec .v {
+      font-weight: 700;
+      margin-top: 4px;
+    }
+
+    .pill {
+      display: inline-block;
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--edge);
+      background: #fafafc;
+      margin-right: 6px;
+    }
+
+    .proj-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .proj-media {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      min-height: 220px;
+    }
+
+    .proj-media img,
+    .proj-media video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .pdf-block {
+      margin-top: 14px;
+    }
+
+    .pdf-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .pdf-title {
+      font-weight: 700;
+    }
+
+    .pdf-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .pdf-btn {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 8px;
+      border: 1px solid var(--edge);
+      text-decoration: none;
+    }
+
+    .pdf-btn.primary {
+      background: #d77a8f;
+      color: #fff;
+      border: none;
+    }
+
+    .pdf-btn.primary:hover {
+      filter: brightness(.95);
+    }
+
+    @media (max-width:980px) {
+      .proj-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .proj-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .proj-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .proj-specs {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -108,9 +299,9 @@
           A handheld device that pairs the precision of sutures with the speed of staples
         </p>
         <div class="meta">
-          <span class="proj-badge">Role: Technical & Economic Lead</span>
-          <span class="proj-badge">Team: MedThreads</span>
-          <span class="proj-badge">2025</span>
+          <span class="proj-badge">Role: Mechanical Lead</span>
+          <span class="proj-badge">Cornell Biomedical Engineering, Senior Capstone Project</span>
+          <span class="proj-badge">August 2024 - May 2025</span>
         </div>
       </div>
       <div class="proj-hero-media">
@@ -132,10 +323,23 @@
           <a href="#downloads">Downloads</a>
         </nav>
         <hr style="border:none; border-top:1px solid var(--edge); margin:14px 0;" />
-        <div class="proj-card" style="padding:14px;">
-          <div class="pill">Emergency & surgical care</div>
-          <div class="pill">Uniform stitches</div>
-          <div class="pill">Ergonomics</div>
+        <div class="proj-specs">
+          <div class="proj-spec">
+            <div class="k">Team</div>
+            <div class="v">Cornell BME</div>
+          </div>
+          <div class="proj-spec">
+            <div class="k">Role</div>
+            <div class="v">Mechanical Lead</div>
+          </div>
+          <div class="proj-spec">
+            <div class="k">Timeline</div>
+            <div class="v">August 2024 - May 2025</div>
+          </div>
+          <div class="proj-spec">
+            <div class="k">Tools</div>
+            <div class="v">Matlab, Fusion 360, 3D Printing, Circuitry</div>
+          </div>
         </div>
       </aside>
 
@@ -150,7 +354,9 @@
             360° track, delivering uniform bite depth and spacing with the press of a button. The
             design targets trauma and operating room workflows where speed, sterility, and repeatability matter.
           </p>
-          <p class="pill">Time Efficient</p><p class="pill">Consistent Sutures</p><p class="pill">Single-Button Actuation</p>
+          <p class="pill">Time Efficient</p>
+          <p class="pill">Consistent Sutures</p>
+          <p class="pill">Single-Button Actuation</p>
         </section>
 
         <section id="problem" class="proj-section">
@@ -158,19 +364,19 @@
           <div class="proj-grid">
             <div>
               <p>
-                Traumatic lacerations account for ~11M ER visits annually in the U.S.; clinicians must
+                Traumatic lacerations account for ~11M ER visits annually in the U.S.. Clinicians must
                 choose between slow, skill-intensive suturing or fast but scar-prone staplers. EasiStitch
                 addresses this trade-off with a simple, ergonomic tool that produces repeatable stitches
-                quickly, aiming to minimize infection and dehiscence while improving appearance.
+                quickly, aiming to minimize infection and wound dehiscence while improving appearance.
               </p>
               <ul>
-                <li>Hybrid value: precision of sutures + speed of staples.</li>
-                <li>Human factors: intuitive grip, perpendicular alignment, one-button actuation.</li>
-                <li>Design for manufacturing: disposable housing, vendor needles, compact drive.</li>
+                <li>Hybrid value: precision of sutures + speed of staples</li>
+                <li>Human factors: intuitive grip, perpendicular alignment, one-button actuation</li>
+                <li>Design for manufacturing: disposable housing, vendor needles, compact drive</li>
               </ul>
             </div>
             <div class="proj-media">
-              <img src="easistitch-sketch.jpg" alt="Concept sketches and objectives slide">
+              <img src="wound.png" alt="Concept sketches and objectives slide">
             </div>
           </div>
         </section>
@@ -183,13 +389,13 @@
             </div>
             <div>
               <p><strong>Drive:</strong> A compact gear trio synchronizes two actuating gear sets, spinning paired
-                rollers that grip and guide a curved ½-circle needle along a circular track.</p>
+                rollers that grip and guide a curved ½-circle needle along a circular track</p>
               <p><strong>Transfer:</strong> As one roller pair ejects the needle from tissue, the opposing pair
-                recaptures it to complete the loop, enabling consistent, repeatable stitches.</p>
+                recaptures it to complete the loop, enabling consistent, repeatable stitches</p>
               <p><strong>Electronics:</strong> A 12V motor (buck-converted from 18V) is switched via a transistor
-                with flyback protection; measured motor power ≈1.02 W, safe without heatsink.</p>
+                with flyback protection; measured motor power ≈ 1.02 W, safe without heatsink</p>
               <p><strong>Needle choice:</strong> ½-circle cutting needle provides predictable circular kinematics
-                and low drag, aligning with the geared actuation path.</p>
+                and low drag, aligning with the geared actuation path</p>
             </div>
           </div>
         </section>
@@ -204,8 +410,6 @@
                   roller capture, and puncture through Dermasol skin model.</li>
                 <li><strong>Ergonomic model:</strong> true-to-size housing validated grip, alignment, and
                   actuation feel with users.</li>
-                <li><strong>Electronics:</strong> bench measurements confirmed safe current, switching, and
-                  thermal behavior.</li>
               </ul>
             </div>
             <div class="proj-card">
@@ -214,8 +418,8 @@
                 <li>Scaled model completed a closure in ~10 s; trajectory/velocity tracked via video to
                   verify smooth path.</li>
                 <li>User study (n=10) showed EasiStitch was comparable to a skin stapler in ease of use
-                  and ergonomics (no significant difference; feedback informed handle tweaks).</li>
-                <li>BOM analysis indicates ~$251 small-batch cost; projected ~$75 at scale.</li>
+                  and ergonomics</li>
+                <li>Economic analysis indicates low production cost and easy manufacturability</li>
               </ul>
             </div>
           </div>
@@ -236,20 +440,32 @@
         <section id="downloads" class="proj-section">
           <h3>Project Files</h3>
 
-          <!-- DHF (convert to PDF for inline preview if possible) -->
+          <!-- DHF Part 1 -->
           <div class="pdf-block">
             <div class="pdf-toolbar">
-              <div class="pdf-title">Design History File (DHF)</div>
+              <div class="pdf-title">Design History File (DHF) - Part 1</div>
               <div class="pdf-actions">
-                <a class="pdf-btn primary" href="EasiStitch_DHF.pdf" download>Download .docx</a>
-                <a class="pdf-btn" href="EasiStitch_DHF.pdf" target="_blank" rel="noopener">Open in new tab</a>
+                <a class="pdf-btn primary" href="EasiStitch_DHF_Part1.pdf" download>Download .docx</a>
+                <a class="pdf-btn" href="EasiStitch_DHF_Part1.pdf" target="_blank" rel="noopener">Open in new tab</a>
               </div>
             </div>
-            <!-- If you export to PDF, swap src to the PDF to show a live preview -->
-            <iframe class="pdf-frame" src="EasiStitch_DHF.pdf" width="100%" height="560"
-              style="border:1px solid var(--edge); border-radius:8px;" title="EasiStitch DHF PDF preview">
+            <iframe class="pdf-frame" src="EasiStitch_DHF_Part1.pdf" width="100%" height="560"
+              style="border:1px solid var(--edge); border-radius:8px;" title="EasiStitch DHF, Part 1 PDF preview">
             </iframe>
+          </div>
+
+          <!-- DHF Part 2 -->
+          <div class="pdf-block">
+            <div class="pdf-toolbar">
+              <div class="pdf-title">Design History File (DHF) - Part 2</div>
+              <div class="pdf-actions">
+                <a class="pdf-btn primary" href="EasiStitch_DHF_Part2.pdf" download>Download .docx</a>
+                <a class="pdf-btn" href="EasiStitch_DHF_Part2.pdf" target="_blank" rel="noopener">Open in new tab</a>
+              </div>
             </div>
+            <iframe class="pdf-frame" src="EasiStitch_DHF_Part2.pdf" width="100%" height="560"
+              style="border:1px solid var(--edge); border-radius:8px;" title="EasiStitch DHF, Part 2 PDF preview">
+            </iframe>
           </div>
         </section>
       </div>
@@ -263,12 +479,13 @@
   <script>
     const menuBtn = document.getElementById('menuBtn');
     const mobileNav = document.getElementById('mobileNav');
-    function openMenu(){ mobileNav.classList.add('open'); mobileNav.setAttribute('aria-hidden','false'); menuBtn.setAttribute('aria-expanded','true'); }
-    function closeMenu(){ mobileNav.classList.remove('open'); mobileNav.setAttribute('aria-hidden','true'); menuBtn.setAttribute('aria-expanded','false'); }
-    if(menuBtn){
-      menuBtn.addEventListener('click',()=>{ mobileNav.classList.contains('open') ? closeMenu() : openMenu(); });
-      window.addEventListener('keydown',(e)=>{ if(e.key==='Escape') closeMenu(); });
+    function openMenu() { mobileNav.classList.add('open'); mobileNav.setAttribute('aria-hidden', 'false'); menuBtn.setAttribute('aria-expanded', 'true'); }
+    function closeMenu() { mobileNav.classList.remove('open'); mobileNav.setAttribute('aria-hidden', 'true'); menuBtn.setAttribute('aria-expanded', 'false'); }
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => { mobileNav.classList.contains('open') ? closeMenu() : openMenu(); });
+      window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
     }
   </script>
 </body>
+
 </html>
